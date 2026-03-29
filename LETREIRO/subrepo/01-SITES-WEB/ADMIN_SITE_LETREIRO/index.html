@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreiro Digital Admin | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Firebase SDK will be loaded here -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0084ff">
+</head>
+<body>
+    <div class="glass-card login-container">
+        <div class="logo-container" style="justify-content: center; padding-bottom: 2rem;">
+            <div class="logo-icon"><i class="fas fa-lock-open"></i></div>
+            <span style="font-weight: 800; font-size: 1.4rem; letter-spacing: -1px;">AUREO <span style="color: var(--primary);">STUDIO</span></span>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h1 style="font-size: 1.6rem; letter-spacing: -1px; margin-bottom: 0.3rem; background: linear-gradient(to right, #fff, #888); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Painel de Controle</h1>
+            <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Letreiro Digital - Gerenciamento de Assets</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+                <label>E-mail Administrativo</label>
+                <input type="email" id="email" placeholder="exemplo@aureostudio.com" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.8rem;">
+                <label>Chave de Acesso</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-premium btn-add" style="width: 100%; justify-content: center; height: 48px; font-size: 0.95rem; text-transform: none;">
+                Entrar no Sistema <i class="fas fa-arrow-right" style="font-size: 0.8rem; opacity: 0.7;"></i>
+            </button>
+            <p id="errorMsg" style="color: var(--danger); margin-top: 1.2rem; text-align: center; font-size: 0.8rem; font-weight: 600;"></p>
+        </form>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Check if already logged in
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    window.location.href = 'dashboard.html';
+                })
+                .catch((error) => {
+                    errorMsg.textContent = error.message;
+                });
+        });
+    </script>
+</body>
+</html>

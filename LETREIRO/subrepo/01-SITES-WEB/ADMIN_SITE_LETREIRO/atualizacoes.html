@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atualizações | Letreiro Digital</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0084ff" />
+    <style>
+      :root {
+        --card-bg: rgba(26, 26, 26, 0.8);
+        --card-border: rgba(255, 255, 255, 0.08);
+      }
+
+      .update-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .action-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .action-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 10px 30px rgba(0, 132, 255, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .action-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+        color: var(--primary-light);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: #fff;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+
+      .form-group input:focus {
+        border-color: var(--primary);
+        outline: none;
+      }
+
+      .severity-badges {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .severity-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid transparent;
+        color: #888;
+        padding: 10px 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.7rem;
+        text-align: center;
+        transition: all 0.2s;
+      }
+
+      .severity-btn.active[data-val="optional"] { background: rgba(16, 185, 129, 0.1); border-color: #10b981; color: #10b981; }
+      .severity-btn.active[data-val="recommended"] { background: rgba(0, 132, 255, 0.1); border-color: #0084ff; color: #0084ff; }
+      .severity-btn.active[data-val="critical"] { background: rgba(220, 38, 38, 0.1); border-color: #dc2626; color: #dc2626; }
+
+      .history-table tr {
+        transition: background 0.2s;
+      }
+      .history-table tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .status-badge {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .current-badge { background: var(--primary); color: #fff; box-shadow: 0 0 15px rgba(0, 132, 255, 0.4); }
+      .past-badge { background: #333; color: #888; }
+    </style>
+  </head>
+  <body data-page="atualizacoes">
+    <div class="mobile-header">
+      <div class="logo-icon-sm"><i class="fas fa-rocket"></i></div>
+      <span>AUREO <span style="color: var(--primary)">STUDIO</span></span>
+      <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <nav class="sidebar" id="sidebar">
+      <div class="logo-container">
+        <div class="logo-icon"><i class="fas fa-rocket"></i></div>
+        <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px">AUREO <span style="color: var(--primary)">STUDIO</span></span>
+      </div>
+      <ul class="nav-links">
+        <div class="nav-section">Principal</div>
+        <li class="nav-item">
+          <a href="dashboard.html"><i class="fas fa-chart-pie"></i><span>Dashboard</span></a>
+        </li>
+        <div class="nav-section">Gestão</div>
+        <li class="nav-item">
+          <a href="licencas.html"><i class="fas fa-key"></i><span>Licenças</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="pagamentos.html"><i class="fas fa-credit-card"></i><span>Pagamentos</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="relatorios.html"><i class="fas fa-file-invoice"></i><span>Relatórios</span></a>
+        </li>
+        <div class="nav-section">Sistema</div>
+        <li class="nav-item active">
+          <a href="atualizacoes.html"><i class="fas fa-cloud-upload-alt"></i><span>Atualizações (App)</span></a>
+        </li>
+      </ul>
+      <div class="nav-item" id="logoutBtn" style="color: var(--danger); margin-top: auto; cursor: pointer">
+        <i class="fas fa-sign-out-alt"></i><span>Sair</span>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section id="tab-updates">
+        <header class="page-header" style="margin-bottom: 2.5rem;">
+          <div class="header-title">
+            <h1>Lançar Versão</h1>
+            <p>Distribua novas funcionalidades e correções</p>
+          </div>
+          <div id="activeVersionIndicator" class="glass-panel" style="padding: 10px 20px; display: flex; align-items: center; gap: 15px; border-radius: 40px; border: 1px solid var(--primary);">
+            <div style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; box-shadow: 0 0 10px #10b981;" class="pulse"></div>
+            <span style="font-size: 0.8rem; font-weight: bold; color: #fff;">Versão Ativa: <span id="lblCurrentVersion">...</span></span>
+          </div>
+        </header>
+
+        <div class="update-grid">
+          <!-- Card 1: Identidade -->
+          <div class="action-card">
+            <h3><i class="fas fa-tag"></i> Identidade</h3>
+            <div class="form-group">
+              <label>Versão Semantic</label>
+              <input type="text" id="updVersion" placeholder="7.0.1">
+            </div>
+            <div class="form-group">
+              <label>Número da Build</label>
+              <input type="number" id="updBuild" placeholder="102">
+            </div>
+            <div class="form-group">
+              <label>Data</label>
+              <input type="date" id="updDate">
+            </div>
+          </div>
+
+          <!-- Card 2: Entrega -->
+          <div class="action-card">
+            <h3><i class="fas fa-link"></i> Entrega</h3>
+            <div class="form-group">
+              <label>Link Direto (ZIP/EXE)</label>
+              <input type="url" id="updLink" placeholder="https://...">
+            </div>
+            <div class="form-group">
+              <label>Prioridade do Lançamento</label>
+              <div class="severity-badges">
+                <div class="severity-btn active" data-val="optional">OPCIONAL</div>
+                <div class="severity-btn" data-val="recommended">RECOMENDADA</div>
+                <div class="severity-btn" data-val="critical">CRÍTICA</div>
+              </div>
+              <input type="hidden" id="updSeverity" value="optional">
+            </div>
+            <div class="form-group" style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 10px;">
+              <input type="checkbox" id="updRequired" style="width: auto;">
+              <label for="updRequired" style="margin: 0; cursor: pointer;">Obrigatória</label>
+            </div>
+          </div>
+
+          <!-- Card 3: Changelog -->
+          <div class="action-card" style="grid-column: span 1;">
+            <h3><i class="fas fa-list-ul"></i> Novidades</h3>
+            <textarea id="updChangelog" style="flex-grow: 1; min-height: 120px;" placeholder="• Descrição da mudança&#10;• Correção de bug..."></textarea>
+            <button id="btnSaveUpdate" class="btn-premium btn-add" style="width: 100%; height: 50px;">
+              <i class="fas fa-paper-plane"></i> LANÇAR AGORA
+            </button>
+          </div>
+        </div>
+
+        <!-- Histórico -->
+        <div class="glass-panel" style="padding: 1.5rem;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-clock-rotate-left"></i> Últimos Lançamentos
+          </h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>BUILD</th>
+                  <th>VERSÃO</th>
+                  <th>DATA</th>
+                  <th>ESTADO</th>
+                  <th style="text-align: right;">AÇÃO</th>
+                </tr>
+              </thead>
+              <tbody id="historyTableBody">
+                <tr><td colspan="5" style="text-align: center; padding: 3rem; color: #555;">Buscando histórico...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="successModal" class="modal">
+      <div class="modal-content" style="text-align: center; max-width: 400px;">
+        <i class="fas fa-check-circle" style="font-size: 4rem; color: #10b981; margin-bottom: 1.5rem;"></i>
+        <h2>Sucesso!</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">A versão <span id="successVersion" style="color:#fff"></span> foi distribuída.</p>
+        <button onclick="location.reload()" class="btn-premium" style="width: 100%;">Fechar</button>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <h2 style="color: var(--danger)"><i class="fas fa-exclamation-triangle"></i> Erro</h2>
+        <div id="errorReport" style="background:#000; padding:15px; margin:15px 0; border-radius:8px; font-family:monospace; font-size:0.8rem; border:1px solid #333;"></div>
+        <button onclick="closeModal('errorModal')" class="btn-premium" style="width: 100%;">Entendido</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"><span></span></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/atualizacoes.js"></script>
+  </body>
+</html>

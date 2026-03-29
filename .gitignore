@@ -1,0 +1,11 @@
+*.exe
+*.zip
+*.pdb
+bin/
+obj/
+*.dll
+*.deps.json
+*.runtimeconfig.json
+temp_clone/
+log/
+firebase/

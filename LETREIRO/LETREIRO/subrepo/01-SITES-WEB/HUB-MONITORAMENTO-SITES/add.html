@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aureo Hub | Adicionar Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-container { width: 100%; max-width: 600px; }
+        .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .form-input { 
+            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; 
+            color: #fff; font-size: 0.95rem; transition: var(--transition); outline: none; font-family: inherit; width: 100%;
+        }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(94, 106, 210, 0.2); background: rgba(0,0,0,0.6); }
+        .form-btn { 
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)); border: none; padding: 16px; border-radius: 12px;
+            color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; font-family: inherit;
+        }
+        .form-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(94, 106, 210, 0.4); }
+
+        @media (max-width: 430px) {
+            .form-container { max-width: 100%; }
+            .form-group label { font-size: 0.72rem; }
+            .form-input { padding: 12px 14px; font-size: 0.88rem; }
+            .form-btn { padding: 14px; font-size: 0.9rem; }
+            .form-btn i { font-size: 0.8rem; }
+            .glass-panel h3 { font-size: 1.1rem !important; }
+            .glass-panel h3 i { font-size: 0.85rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-satellite-dish"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Visão Geral</div>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="sistemas.html"><i class="fas fa-network-wired"></i><span>Sistemas Ativos</span></a></li>
+            <li class="nav-item">
+                <a href="repos.html">
+                    <i class="fab fa-github"></i>
+                    <span>Repositórios GitHub</span>
+                </a>
+            </li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item active">
+                <a href="add.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Adicionar Site</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="metricas.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Métricas de Uptime</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vault.html">
+                    <i class="fas fa-key"></i>
+                    <span>Cofre de Senhas</span>
+                </a>
+            </li>
+
+            <div class="nav-section">Sistema</div>
+            <li class="nav-item">
+                <a href="config.html">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações &amp; APIs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Mapear Novo Sistema</h1>
+                <p>Adicione uma nova URL na rotina de varredura global do Aureo Hub.</p>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="filter-btn active" style="text-decoration: none;"><i class="fas fa-arrow-left"></i> Voltar</a>
+                <div id="headerUser" style="margin-left: 1rem;"></div>
+            </div>
+        </header>
+
+        <div class="glass-panel form-container">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 8px;"><i class="fas fa-link" style="color: var(--primary-light);"></i> Dados de Conexão</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Insira o endereço exato do painel ou website.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Modo de demonstração: Sistema de salvamento ainda requer backend persistente.'); location.href='index.html';">
+                <div class="form-group">
+                    <label>Nome Amigável do App</label>
+                    <input type="text" class="form-input" placeholder="Ex: Painel Financeiro" required>
+                </div>
+
+                <div class="form-group">
+                    <label>URL / Endpoint</label>
+                    <input type="url" class="form-input" placeholder="https://" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 2.5rem;">
+                    <label>Categoria de Monitoramento</label>
+                    <select class="form-input" required>
+                        <option value="web">Website Público</option>
+                        <option value="admin">Painel Administrativo</option>
+                        <option value="api">API / Backend Service</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="form-btn">
+                    <i class="fas fa-satellite-dish"></i> Adicionar na Varredura
+                </button>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

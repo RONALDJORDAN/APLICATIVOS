@@ -1,0 +1,21 @@
+{
+    "name": "Letreiro Digital Admin",
+    "short_name": "LD Admin",
+    "description": "Painel de Controle do Letreiro Digital",
+    "icons": [
+        {
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0084ff",
+    "background_color": "#05060a",
+    "display": "standalone",
+    "start_url": "/dashboard.html"
+}

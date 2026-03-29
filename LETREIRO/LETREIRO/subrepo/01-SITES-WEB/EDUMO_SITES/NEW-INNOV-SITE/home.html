@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovPlay - Plataforma Educacional Gamificada</title>
+    <!-- CSS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-container">
+            <div class="brand-logo">
+                <a href="home.html">
+                    <img src="arquivos_innov/logo_padrao_innov.png" alt="InnovPlay" style="height: 50px;">
+                </a>
+            </div>
+
+            <nav class="nav-links">
+                <a href="home.html" style="color:var(--neon-blue);">Início</a>
+                <a href="solucoes.html">Soluções</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+
+            <a href="https://demonstracao.innovplay.com.br/" class="btn-login" target="_blank">Acessar Sistema</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Transforme a Educação com <span class="text-gradient">Gamificação</span></h1>
+                <p>Uma plataforma completa que une desenvolvimento estudantil, jogos educativos e avaliações diagnósticas para criar uma experiência de aprendizado engajadora.</p>
+                <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                    <a href="#" class="btn-hero">Conhecer Agora</a>
+                    <a href="#" class="btn-login" style="border-color:rgba(255,255,255,0.2);">Ver Demonstração</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <img src="arquivos_innov/img-2.svg" alt="InnovPlay Demo" class="floating-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section-features" id="solucoes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Nossas Soluções</span>
+                <h2 class="section-title">O Ecossistema InnovPlay</h2>
+            </div>
+
+            <div class="features-grid">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <i class="fa-solid fa-play feature-icon"></i>
+                    <h3>Innov Play TV</h3>
+                    <p>Maratona de aprendizagem com videoaulas interativas e conteúdo curado para engajar os alunos no formato que eles amam.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <i class="fa-solid fa-gamepad feature-icon"></i>
+                    <h3>Game Start</h3>
+                    <p>Jogos educacionais alinhados à BNCC que tornam o aprendizado de matemática e português uma aventura divertida.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <i class="fa-solid fa-clipboard-list feature-icon"></i>
+                    <h3>Avaliações</h3>
+                    <p>Diagnósticos precisos de nivelamento para identificar lacunas de aprendizado e personalizar o ensino.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card">
+                    <i class="fa-solid fa-trophy feature-icon"></i>
+                    <h3>Ranking Escolar</h3>
+                    <p>Sistema de recompensas, XP e medalhas que estimula a participação saudável e o reconhecimento do esforço.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="feature-card">
+                    <i class="fa-solid fa-truck-fast feature-icon"></i> <!-- or fa-laptop-code -->
+                    <h3>Laboratórios Móveis</h3>
+                    <p>Tecnologia que vai até o aluno. Carrinhos de recarga e armazenamento que transformam qualquer sala de aula em um laboratório maker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: BENEFITS BY PROFILE -->
+    <section class="section-features" style="background:var(--bg-dark); padding-top:50px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Público Alvo</span>
+                <h2 class="section-title">Para quem é o InnovPlay?</h2>
+            </div>
+            <div class="features-grid">
+                <!-- Managers -->
+                <div class="feature-card" style="border-color:var(--neon-blue);">
+                    <i class="fa-solid fa-chart-line feature-icon" style="background:none; -webkit-text-fill-color:var(--neon-blue); color:var(--neon-blue);"></i>
+                    <h3>Gestores</h3>
+                    <p>Acompanhe indicadores de desempenho em tempo real, interfira onde é necessário e garanta a equidade no aprendizado de toda a rede.</p>
+                </div>
+                <!-- Teachers -->
+                <div class="feature-card" style="border-color:var(--neon-pink);">
+                    <i class="fa-solid fa-chalkboard-user feature-icon" style="background:none; -webkit-text-fill-color:var(--neon-pink); color:var(--neon-pink);"></i>
+                    <h3>Professores</h3>
+                    <p>Menos tempo corrigindo provas, mais tempo ensinando. Receba diagnósticos prontos e sugestões de intervenção pedagógica automática.</p>
+                </div>
+                <!-- Students -->
+                <div class="feature-card" style="border-color:var(--primary-purple);">
+                    <i class="fa-solid fa-user-astronaut feature-icon" style="background:none; -webkit-text-fill-color:var(--primary-purple); color:var(--primary-purple);"></i>
+                    <h3>Alunos</h3>
+                    <p>Aprender nunca foi tão legal. Ganhe XP, suba de nível, desbloqueie avatares e estude com conteúdos que falam a sua língua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-about" id="sobre">
+        <div class="container about-grid">
+            <div class="about-visual">
+                <div style="width:100%; height:400px; background:#1a1a24; border-radius:20px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.1);">
+                     <i class="fa-solid fa-chart-pie" style="font-size:8rem; color:var(--primary-purple); opacity:0.5;"></i>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-subtitle">Sobre a Plataforma</span>
+                <h2 class="section-title" style="margin-bottom:20px;">Dados que impulsionam o futuro</h2>
+                <p style="color:var(--text-gray); line-height:1.8; margin-bottom:30px;">
+                    A InnovPlay não é apenas um jogo, é uma ferramenta de gestão pedagógica. Através de nossos dashboards,
+                    gestores e professores acompanham o desempenho de cada aluno em tempo real.
+                </p>
+                
+                <div class="stat-row">
+                    <div class="stat-item">
+                        <h2>+15k</h2>
+                        <p>Alunos Impactados</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>98%</h2>
+                        <p>Aprovação Docente</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>24h</h2>
+                        <p>Monitoramento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS CAROUSEL -->
+    <section class="testimonials-section" id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Depoimentos</span>
+                <h2 class="section-title">O que dizem nossos parceiros</h2>
+            </div>
+
+            <div class="testimonials-carousel">
+                <button class="carousel-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-next"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="testimonials-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "A InnovPlay transformou completamente a forma como nossos alunos se relacionam com o aprendizado. 
+                                A gamificação tornou as aulas muito mais dinâmicas e o engajamento aumentou 85% em apenas 3 meses!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="arquivos_innov/testimonial_teacher_1_1769111218421.png" alt="Professora Maria" class="testimonial-avatar">
+                                <div class="testimonial-info">
+                                    <h4>Prof. Maria Carolina</h4>
+                                    <p>Coordenadora Pedagógica | Escola Municipal Santos Dumont</p>
+                                    <div class="testimonial-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "Os relatórios pedagógicos da plataforma nos permitem identificar exatamente onde cada aluno precisa de apoio. 
+                                Conseguimos personalizar o ensino de forma precisa e os resultados são impressionantes!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="arquivos_innov/testimonial_coordinator_1769111232813.png" alt="Coordenador Roberto" class="testimonial-avatar">
+                                <div class="testimonial-info">
+                                    <h4>Roberto Silva</h4>
+                                    <p>Coordenador de TI Educacional | Secretaria de Educação</p>
+                                    <div class="testimonial-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">
+                                "Implementamos a InnovPlay em toda a rede municipal e os indicadores de aprendizagem melhoraram significativamente. 
+                                A plataforma é intuitiva tanto para professores quanto para alunos. Recomendo fortemente!"
+                            </p>
+                            <div class="testimonial-author">
+                                <img src="arquivos_innov/testimonial_principal_1769111245805.png" alt="Diretora Ana" class="testimonial-avatar">
+                                <div class="testimonial-info">
+                                    <h4>Ana Beatriz Ferreira</h4>
+                                    <p>Diretora de Escola | EMEF Machado de Assis</p>
+                                    <div class="testimonial-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANIMATED STATISTICS -->
+    <section class="animated-stats-section" id="numeros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Impacto Real</span>
+                <h2 class="section-title">Números que Fazem a Diferença</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <i class="fa-solid fa-graduation-cap stat-icon"></i>
+                    <div class="stat-number counter" data-target="15000">0</div>
+                    <div class="stat-label">Alunos Engajados</div>
+                </div>
+
+                <div class="stat-card reveal">
+                    <i class="fa-solid fa-school stat-icon"></i>
+                    <div class="stat-number counter" data-target="120">0</div>
+                    <div class="stat-label">Escolas Parceiras</div>
+                </div>
+
+                <div class="stat-card reveal">
+                    <i class="fa-solid fa-gamepad stat-icon"></i>
+                    <div class="stat-number counter" data-target="500000">0</div>
+                    <div class="stat-label">Atividades Realizadas</div>
+                </div>
+
+                <div class="stat-card reveal">
+                    <i class="fa-solid fa-chart-line stat-icon"></i>
+                    <div class="stat-number counter" data-target="85">0</div>
+                    <div class="stat-label">% Aumento de Engajamento</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works-section" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Processo Simples</span>
+                <h2 class="section-title">Como Funciona a InnovPlay</h2>
+                <p style="color:var(--text-gray); max-width:600px; margin: 20px auto 0;">
+                    Em apenas 4 passos, sua instituição estará pronta para revolucionar a educação
+                </p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-item reveal">
+                    <div class="step-number">1</div>
+                    <h3>Entre em Contato</h3>
+                    <p>Nossa equipe especializada faz uma análise personalizada das necessidades da sua escola</p>
+                </div>
+
+                <div class="step-item reveal">
+                    <div class="step-number">2</div>
+                    <h3>Implantação Rápida</h3>
+                    <p>Configuramos toda a plataforma e realizamos o treinamento completo dos professores</p>
+                </div>
+
+                <div class="step-item reveal">
+                    <div class="step-number">3</div>
+                    <h3>Primeiros Passos</h3>
+                    <p>Alunos começam a usar a plataforma com atividades gamificadas e professores acompanham os resultados</p>
+                </div>
+
+                <div class="step-item reveal">
+                    <div class="step-number">4</div>
+                    <h3>Resultados Visíveis</h3>
+                    <p>Acompanhe métricas em tempo real e veja o engajamento e aprendizado aumentarem consistentemente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Dúvidas Frequentes</span>
+                <h2 class="section-title">Perguntas e Respostas</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>A InnovPlay funciona em qualquer dispositivo?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Sim! A plataforma é 100% responsiva e funciona perfeitamente em computadores, tablets e smartphones. 
+                            Também oferecemos laboratórios móveis completos com Chromebooks para escolas que precisam de infraestrutura.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quanto tempo leva para implementar a plataforma?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            O processo de implementação é rápido! Em média, leva de 7 a 15 dias úteis, incluindo configuração da plataforma, 
+                            cadastro de usuários e treinamento completo da equipe pedagógica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Os professores precisam de conhecimento técnico avançado?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Não! A interface é extremamente intuitiva e oferecemos treinamento completo. 
+                            Além disso, nossa equipe de suporte está sempre disponível para auxiliar em qualquer dúvida.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O conteúdo está alinhado à BNCC?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Absolutamente! Todo o conteúdo da InnovPlay é desenvolvido seguindo rigorosamente as diretrizes da 
+                            Base Nacional Comum Curricular (BNCC), garantindo qualidade pedagógica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>É possível personalizar as atividades?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Sim! Professores podem criar atividades personalizadas, definir diferentes níveis de dificuldade e 
+                            adaptar o conteúdo às necessidades específicas de cada turma ou aluno.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como funciona o suporte técnico?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Oferecemos suporte técnico completo via WhatsApp, email e telefone durante horário comercial. 
+                            Para escolas com planos Enterprise, há suporte prioritário com atendimento estendido.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Os dados dos alunos estão seguros?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Sim! Seguimos rigorosamente a LGPD (Lei Geral de Proteção de Dados) e utilizamos criptografia de ponta 
+                            para garantir a segurança e privacidade de todos os dados dos alunos e professores.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Posso testar a plataforma antes de contratar?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Com certeza! Oferecemos demonstrações gratuitas e períodos de teste para que gestores e professores 
+                            possam experimentar todas as funcionalidades antes de tomar a decisão de implementação.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section style="background:var(--bg-dark); padding:50px 0;">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Pronto para Transformar a Educação?</h2>
+                <p>Junte-se a mais de 120 escolas que já revolucionaram o aprendizado com a InnovPlay</p>
+                <a href="contato.html" class="btn-hero">Solicitar Demonstração Gratuita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <img src="arquivos_innov/logo_padrao_innov.png" alt="InnovPlay" style="height: 60px;">
+                    </div>
+                    <p>Transformando a educação pública através da tecnologia e da gamificação avançada.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li><a href="#">Área do Aluno</a></li>
+                        <li><a href="#">Área do Professor</a></li>
+                        <li><a href="#">Gestão Escolar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Cases de Sucesso</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div style="display:flex; gap:15px; font-size:1.5rem;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy">
+                &copy; 2025 InnovPlay - Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

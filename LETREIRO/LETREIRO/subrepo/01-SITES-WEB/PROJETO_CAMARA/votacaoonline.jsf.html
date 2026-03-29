@@ -1,0 +1,385 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="j_idt2"><link type="text/css" rel="stylesheet" href="javax.faces.resource/theme.css.jsf?ln=primefaces-aristo"><script type="text/javascript" src="javax.faces.resource/jquery/jquery.js.jsf?ln=primefaces&amp;v=6.1"></script><script type="text/javascript" src="javax.faces.resource/jquery/jquery-plugins.js.jsf?ln=primefaces&amp;v=6.1"></script><script type="text/javascript" src="javax.faces.resource/core.js.jsf?ln=primefaces&amp;v=6.1"></script><link type="text/css" rel="stylesheet" href="javax.faces.resource/components.css.jsf?ln=primefaces&amp;v=6.1"><link type="text/css" rel="stylesheet" href="javax.faces.resource/layout/layout.css.jsf?ln=primefaces&amp;v=6.1"><script type="text/javascript" src="javax.faces.resource/components.js.jsf?ln=primefaces&amp;v=6.1"></script><script type="text/javascript" src="javax.faces.resource/layout/layout.js.jsf?ln=primefaces&amp;v=6.1"></script><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='pt_BR';}</script>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <title>NSTechWeb - Sistema Online do Plenário - Câmara de São Miguel dos Campos - AL</title>
+        <link rel="stylesheet" type="text/css" href="css/nstechcss.css"></head><body style="background-color: #e6ffee">
+
+        <div class="divcabecalho">
+            <p style="font-size: 25px;                 margin-left: 10px;                 font-weight: bold;                margin-top: 40px;                text-shadow: 2px 2px #000;                               color: #fff">NSTechWeb - Sistema Online do Plenário - Câmara de São Miguel dos Campos - AL</p>
+        </div>        
+        
+        <div class="nstechImgTitle" style="background-color: #ffffff">
+            <img src="Images/Logo.png" class="bgtransparencia" style="max-width: 100%; position:fixed; right:10px; width: 5%;">
+        </div>
+        
+        <div class="nstechbody"><head id="j_idt6"><link type="text/css" rel="stylesheet" href="javax.faces.resource/theme.css.jsf?ln=primefaces-aristo"><script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='pt_BR';}</script>
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+            <link rel="stylesheet" type="text/css" href="css/nstechcss.css"></head> 
+
+        <style type="text/css">
+
+            html, body { height: 100% }    
+            #f {height: 100%;
+                min-width: 100%}
+            
+            .ff {height: 720px;
+                 min-width: 100%}
+            
+            .panelvoto{
+                height: 20px;
+                align-items: center;
+                text-align: center;
+                padding: 5px;
+                margin: 0 auto;
+                border-radius: 5em / 5em;
+            }
+
+            .votoverde{
+                background-color: green;                
+                font-size: 12px;
+                color: #fff;
+                border-radius: 5em / 5em; 
+                padding-left: 10px; 
+                padding-top: 5px; 
+                padding-right: 10px; 
+                padding-bottom: 5px
+            }
+            
+            .votovermelho{
+                background-color: red;                
+                font-size: 12px;
+                color: #fff;
+                border-radius: 5em / 5em; 
+                padding-left: 10px; 
+                padding-top: 5px; 
+                padding-right: 10px; 
+                padding-bottom: 5px            
+            }
+            
+            .votobranco{
+                background-color: white;                
+                font-size: 8px; 
+                color: #fff;
+                border-radius: 5em / 5em; 
+                padding-left: 10px; 
+                padding-top: 5px; 
+                padding-right: 10px; 
+                padding-bottom: 5px            
+            }
+            
+            .voto{
+                font-size: 10px;
+                color: #fff;  
+            }
+            
+            .votoonline{
+                font-size: 20px;
+                color: #fff;  
+            }
+            
+            .left {
+                text-align: left !important;
+                width: 40%;
+            }
+
+            .right {
+                text-align: right !important;
+                width: 60%;
+            }
+
+        </style>
+<form id="form" name="form" method="post" action="/NSTechWebCam/votacaoonline.jsf" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="form" value="form">
+<script id="form:j_idt9_s" type="text/javascript">$(function(){PrimeFaces.cw("Poll","widget_form_j_idt9",{id:"form:j_idt9",frequency:5,autoStart:true,fn:function(){PrimeFaces.ab({s:"form:j_idt9",f:"form",u:"form"});}});});</script><script id="form:j_idt10_s" type="text/javascript">$(function(){PrimeFaces.cw("Layout","widget_form_j_idt10",{id:"form:j_idt10",west:{paneSelector:'#form\\:j_idt11',size:"650",resizable:false,closable:false,minSize:40,maxSize:650},center:{paneSelector:'#form\\:j_idt24',size:"auto",resizable:false,closable:false}});});</script><div id="form:j_idt10" class="ff"><div id="form:j_idt11" class="ui-layout-unit ui-widget ui-widget-content ui-corner-all ui-layout-west"><div class="ui-layout-unit-content ui-widget-content"><table width="100%">
+<tbody>
+<tr>
+<td><div id="form:j_idt13" class="ui-panel ui-widget ui-widget-content ui-corner-all" style="background-color: #73AD21; width: 100%; padding: 0" data-widget="widget_form_j_idt13"><div id="form:j_idt13_content" class="ui-panel-content ui-widget-content"><label id="form:j_idt14" class="ui-outputlabel ui-widget" style="width: 100%; font-size: 25px; font-style: italic; color: #FFF; padding: 0px; font-weight: bold">Nº </label></div></div><script id="form:j_idt13_s" type="text/javascript">PrimeFaces.cw("Panel","widget_form_j_idt13",{id:"form:j_idt13"});</script></td>
+</tr>
+<tr>
+<td><label id="form:j_idt15" class="ui-outputlabel ui-widget" style="width: 50%; font-size: 30px; font-weight: bold"></label></td>
+</tr>
+<tr>
+<td><div id="form:j_idt16" class="ui-panel ui-widget ui-widget-content ui-corner-all" style="background-color: #73AD21; width: 100%; padding: 0" data-widget="widget_form_j_idt16"><div id="form:j_idt16_content" class="ui-panel-content ui-widget-content"><label id="form:j_idt17" class="ui-outputlabel ui-widget" style="width: 100%; font-size: 25px; font-style: italic; color: #FFF; padding: 0px; font-weight: bold">Autor</label></div></div><script id="form:j_idt16_s" type="text/javascript">PrimeFaces.cw("Panel","widget_form_j_idt16",{id:"form:j_idt16"});</script></td>
+</tr>
+<tr>
+<td><label id="form:j_idt18" class="ui-outputlabel ui-widget" style="width: 50%; font-size: 30px; font-weight: bold"></label></td>
+</tr>
+<tr>
+<td><div id="form:j_idt19" class="ui-panel ui-widget ui-widget-content ui-corner-all" style="background-color: #73AD21; width: 100%; padding: 0" data-widget="widget_form_j_idt19"><div id="form:j_idt19_content" class="ui-panel-content ui-widget-content"><label id="form:j_idt20" class="ui-outputlabel ui-widget" style="width: 100%; font-size: 30px; font-style: italic; color: #FFF; padding: 0px; font-weight: bold">Descrição</label></div></div><script id="form:j_idt19_s" type="text/javascript">PrimeFaces.cw("Panel","widget_form_j_idt19",{id:"form:j_idt19"});</script></td>
+</tr>
+<tr>
+<td><span style="font-size: 30px; text-align: justify; font-weight: bold"></span></td>
+</tr>
+</tbody>
+</table>
+<table width="100%">
+<tbody>
+<tr>
+<td><label id="form:cronometroAtivado" class="ui-outputlabel ui-widget" style="width: 100%; margin-left: 20px; font-size: 100px;                                                        color: white">CronometroParado</label></td>
+</tr>
+<tr>
+<td>
+                        <br>
+                        <p id="timer" style="width: 100%; font-size: 150px; margin-left: 20%;                                              color: white">
+                                             </p></td>
+</tr>
+</tbody>
+</table>
+</div></div><div id="form:j_idt24" class="ui-layout-unit ui-widget ui-widget-content ui-corner-all ui-layout-center" style="width: 100%; max-width: 100%; text-align: center; align-items: center;"><div class="ui-layout-unit-content ui-widget-content">
+                    <!--
+                    &lt;p:panel style="background-color: #73AD21; width: 100%; padding: 0"&gt;
+                        &lt;p:outputLabel value="Sess&atilde;o Ordin&aacute;ria de " 
+                                       style="width: 100%; font-size: 25px; font-style: italic; font-weight: bold; color: #FFF; padding: 0"/&gt;
+                    &lt;/p:panel&gt;
+                    --><table id="form:j_idt26" class="ui-panelgrid ui-widget" style="align-items: center; text-align: center; width: 75%; margin-top: 2px; margin-left: 12.5%" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt27" class="ui-panelgrid ui-widget ui-noborder" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt28" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt30" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt32" class="ui-panelgrid ui-widget ui-noborder" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt33" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="align-items: center; align-content: center; 
+                                                  font-size: 18px; font-weight: bold"/&gt;
+                            &lt;p:outputLabel value="Presidente" 
+                                           style="align-items: center; align-content: center; 
+                                                  font-size: 15px; font-weight: bold; text-decoration: underline"/&gt;
+                            -->
+                            <!--
+                            &lt;p:outputLabel value="" 
+                                           class=""
+                                           style="font-size: 13px"/
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt35" class="ui-outputlabel ui-widget" style="align-items: center; align-content: center;                                                    font-size: 13px; font-weight: bold; text-decoration: underline">Presidente</label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt37" class="ui-panelgrid ui-widget ui-noborder" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt38" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt40" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td></tr></tbody></table><table id="form:j_idt42" class="ui-panelgrid ui-widget" style="align-items: center; text-align: center" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt43" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt44" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;h:outputText value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt46" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt48" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt49" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;h:outputText value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt51" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt53" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt54" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;h:outputText value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt56" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt58" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt59" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;h:outputText value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt61" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt63" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt64" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt66" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt68" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt69" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt71" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt73" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt74" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt76" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt78" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt79" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt81" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt83" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt84" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt86" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt88" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt89" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt91" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt93" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt94" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt96" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td><td role="gridcell" class="ui-panelgrid-cell"><table id="form:j_idt98" class="ui-panelgrid ui-widget ui-noborder" style="width: 100%; align-items: center; text-align: center;" role="grid"><tbody><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><img id="form:j_idt99" src="Images/vereadores/?pfdrid_c=true" alt="" style="width: 65%; size: 65px; opacity: "></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                                            padding: 5px;
+                                            border: 2px solid green;
+                                            border-radius: 50%; text-align: center; opacity: "/&gt;
+                            &lt;p:outputLabel value=""
+                                           style="text-align: center; font-size:15px; font-weight: bold"/&gt;
+                            --></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell"><label id="form:j_idt101" class="ui-outputlabel ui-widget " style="font-size: 13px"></label></td></tr><tr class="ui-widget-content" role="row"><td role="gridcell" class="ui-panelgrid-cell">
+                            <!--
+                            &lt;p:panelGrid columns="2" style="width: 100%"&gt;
+                                &lt;p:graphicImage url="Images/Aprovado.png" style="width: 40px"/&gt;
+                            &lt;/p:panelGrid&gt;
+                            --></td></tr></tbody></table></td></tr></tbody></table></div></div></div><table style="position: fixed; bottom:0; width:100%; margin-left: 0px; height: 150px;">
+<tbody>
+<tr>
+<td><label style="font-size: 40px; width: 50%; text-align: center;                                        background-color: green; padding: 5px; margin-left: -11px;                                        color: #fff; position: fixed; bottom: 0">VOTOS À FAVOR: 0</label></td>
+<td><label style="font-size: 40px; width: 50%; text-align: center;                                        background-color: red; padding: 5px;                                        color: #fff; position: fixed; bottom: 0">VOTOS CONTRA: 0</label></td>
+</tr>
+</tbody>
+</table>
+<input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-9022589235959102471:3175338398275525820" autocomplete="off">
+</form>
+
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date().getTime()+300000;
+                status = document.getElementById("form:cronometroAtivado").innerHTML;
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                  status = document.getElementById("form:cronometroAtivado").innerHTML;
+                  
+                  if (status == "CronometroParado") {
+                     countDownDate = new Date().getTime()+300000;
+                  }
+
+                  // Get today's date and time
+                  var now = new Date().getTime();
+
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                  if (minutes >= 0) {
+                  // Output the result in an element with id="demo"
+                      if (seconds > 9){
+                         document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+                         //document.getElementById("timer").style.fontSize = "20"; 
+                      }else{
+                         document.getElementById("timer").innerHTML = minutes + ":" + "0" + seconds;
+                      }
+                  }else{
+                      document.getElementById("timer").style.marginleft = "0px"; 
+                      document.getElementById("timer").style.fontSize = "100px"; 
+                      document.getElementById("timer").innerHTML = "TEMPO ESGOTADO";
+                  }
+                  //document.getElementById("timer").innerHTML = status;
+                  
+                  // If the count down is over, write some text 
+                  //if (distance  0) {
+                  //  clearInterval(x);
+                  //  document.getElementById("timer").innerHTML = "TEMPO ESGOTADO";
+                  //}
+                }, 1000);
+
+            </script>        
+        </div></body>
+</html>

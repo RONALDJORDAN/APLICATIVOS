@@ -1,0 +1,37 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "public/**",
+      "package.json",
+      "package-lock.json",
+      "database.rules.json",
+      "firestore.rules",
+      "firestore.indexes.json",
+      "/app.js",
+      "/config.js",
+      "/style.css"
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Aureo Hub",
+        "supportEmail": "jordan.araujo.im@gmail.com"
+      }
+    }
+  }
+}

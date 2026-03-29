@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Aplicação Presencial | TransEquip</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="play-outline"></ion-icon>
+                <span>InnovPlay</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><ion-icon name="grid-outline"></ion-icon> Dashboard</a></li>
+                    <li class="hide-mobile"><a href="pessoas.html"><ion-icon name="people-outline"></ion-icon>
+                            Pessoas</a></li>
+                    <li class="hide-mobile"><a href="equipamentos.html"><ion-icon name="list-outline"></ion-icon>
+                            Equipamentos</a></li>
+                    <li class="active"><a href="aplicacao.html"><ion-icon name="school-outline"></ion-icon>
+                            Aplicação</a></li>
+                    <li><a href="mapa.html"><ion-icon name="map-outline"></ion-icon> Mapa de Rotas</a></li>
+                    <li class="hide-mobile"><a href="configuracoes.html"><ion-icon name="settings-outline"></ion-icon>
+                            Configurações</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="user-info">
+                    <p class="name">Admin User</p>
+                    <p class="role">Controlador</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p>Processando dados...</p>
+            </div>
+
+            <header class="anim-fade-up">
+                <div class="greeting">
+                    <h1>Aplicação <span>Presencial</span></h1>
+                    <p>Gerenciamento de aplicações por escola, turma e turno.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input type="text" id="busca-escola" placeholder="Buscar escola..." oninput="filterEscolas()">
+                    </div>
+                    <button class="btn-primary" onclick="openModalAplicacao()">
+                        <ion-icon name="add-outline"></ion-icon> Nova Turma
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card anim-fade-up anim-delay-1">
+                    <div class="card-icon blue">
+                        <ion-icon name="school-outline"></ion-icon>
+                    </div>
+                    <div class="card-data">
+                        <p class="label">Total Escolas</p>
+                        <h2 class="value" id="stat-escolas">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card anim-fade-up anim-delay-2">
+                    <div class="card-icon green">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                    <div class="card-data">
+                        <p class="label">Total Turmas</p>
+                        <h2 class="value" id="stat-turmas">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card anim-fade-up anim-delay-3">
+                    <div class="card-icon yellow">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <div class="card-data">
+                        <p class="label">Total Alunos</p>
+                        <h2 class="value" id="stat-alunos">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card aparelhos-card" onclick="editMaxAparelhos()"
+                    title="Clique para editar a quantidade de aparelhos">
+                    <div class="card-icon red">
+                        <ion-icon name="tablet-portrait-outline"></ion-icon>
+                    </div>
+                    <div class="card-data">
+                        <p class="label">Total Aparelhos</p>
+                        <h2 class="value" id="stat-aparelhos-max">carregando...</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botoes de Controle de Visualizacao -->
+            <div class="view-controls">
+                <div class="view-controls-group">
+                    <button id="btn-view-escola" class="btn active" onclick="setViewMode('escola')">
+                        <ion-icon name="business-outline"></ion-icon> Agrupar por Escola
+                    </button>
+                    <button id="btn-view-data" class="btn" onclick="setViewMode('data')">
+                        <ion-icon name="calendar-outline"></ion-icon> Agrupar por Data
+                    </button>
+                </div>
+                <button class="btn btn-outline btn-reset" onclick="resetAplicacaoSeed()">
+                    <ion-icon name="refresh-outline"></ion-icon> Resetar Dados
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <section class="chart-container anim-fade-up anim-delay-5"
+                style="margin-bottom: 2rem; padding: 1.25rem 1.5rem;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <h3 style="font-size: 0.95rem; font-weight: 600;">Uso de Aparelhos</h3>
+                    <span id="progress-label" style="font-size: 0.85rem; color: var(--text-muted);">0%</span>
+                </div>
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+            </section>
+
+            <!-- School Accordion -->
+            <section id="escolas-accordion">
+                <!-- Rendered dynamically -->
+            </section>
+
+            <!-- Modal for Nova Turma -->
+            <div class="modal-overlay" id="modal-aplicacao">
+                <div class="modal-card">
+                    <div class="modal-header">
+                        <h3><ion-icon name="school-outline"></ion-icon> Cadastrar Turma</h3>
+                        <button class="modal-close" onclick="closeModalAplicacao()">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <form id="form-aplicacao">
+                        <div class="form-group">
+                            <label>Escola *</label>
+                            <input type="text" id="ap-escola" class="form-control" required
+                                placeholder="Ex: JOSÉ TAVARES DE CASTRO" list="escolas-datalist">
+                            <datalist id="escolas-datalist"></datalist>
+                        </div>
+                        <div class="form-group">
+                            <label>Localidade *</label>
+                            <input type="text" id="ap-localidade" class="form-control" required
+                                placeholder="Ex: Jacarezinho">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Turma *</label>
+                                <input type="text" id="ap-turma" class="form-control" required placeholder="Ex: 6º A">
+                            </div>
+                            <div class="form-group">
+                                <label>Qtd. Alunos *</label>
+                                <input type="number" id="ap-alunos" class="form-control" required min="1"
+                                    placeholder="Ex: 25">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Turno *</label>
+                            <select id="ap-turno" class="form-control" required>
+                                <option value="Manhã">Manhã</option>
+                                <option value="Tarde">Tarde</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Data da Aplicação</label>
+                                <input type="date" id="ap-data" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Dia da Semana</label>
+                                <select id="ap-dia" class="form-control">
+                                    <option value="">Selecione...</option>
+                                    <option value="Segunda-Feira">Segunda-Feira</option>
+                                    <option value="Terça-Feira">Terça-Feira</option>
+                                    <option value="Quarta-Feira">Quarta-Feira</option>
+                                    <option value="Quinta-Feira">Quinta-Feira</option>
+                                    <option value="Sexta-Feira">Sexta-Feira</option>
+                                    <option value="Sábado">Sábado</option>
+                                    <option value="Domingo">Domingo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Zona</label>
+                            <select id="ap-zona" class="form-control">
+                                <option value="">Selecione...</option>
+                                <option value="Urbana">Urbana</option>
+                                <option value="Rural">Rural</option>
+                                <option value="Urbana/Rural">Urbana/Rural</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary"
+                            style="width: 100%; justify-content: center; margin-top: 1rem;">
+                            <ion-icon name="checkmark-outline"></ion-icon> Salvar Turma
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+    <script src="aplicacao.js"></script>
+</body>
+
+</html>

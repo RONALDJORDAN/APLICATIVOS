@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos | TransEquip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="play-outline"></ion-icon>
+                <span>InnovPlay</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><ion-icon name="grid-outline"></ion-icon> Dashboard</a></li>
+                    <li><a href="pessoas.html"><ion-icon name="people-outline"></ion-icon> Pessoas</a></li>
+                    <li class="active"><a href="equipamentos.html"><ion-icon name="list-outline"></ion-icon>
+                            Equipamentos</a></li>
+                    <li><a href="aplicacao.html"><ion-icon name="school-outline"></ion-icon> Aplicação</a></li>
+                    <li><a href="mapa.html"><ion-icon name="map-outline"></ion-icon> Mapa de Rotas</a></li>
+                    <li><a href="configuracoes.html"><ion-icon name="settings-outline"></ion-icon> Configurações</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="user-info">
+                    <p class="name">Admin User</p>
+                    <p class="role">Controlador</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p>Processando dados...</p>
+            </div>
+
+            <header class="anim-fade-up">
+                <div class="greeting">
+                    <h1>Gestão de <span>Equipamentos</span></h1>
+                    <p>Controle de inventário e fluxo de equipamentos.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary" onclick="openModal()">
+                        <ion-icon name="add-outline"></ion-icon> Novo Equipamento
+                    </button>
+                </div>
+            </header>
+
+            <!-- Equipment Table -->
+            <section class="chart-container anim-fade-up anim-delay-2">
+                <div class="table-responsive">
+                    <table class="glass-table" id="tabela-equipamentos">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Status</th>
+                                <th>Responsável</th>
+                                <th>Destino</th>
+                                <th>Retornado</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic content via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Modal for New Equipment -->
+            <div class="modal-overlay" id="modal-equipamento">
+                <div class="modal-card">
+                    <div class="modal-header">
+                        <h3><ion-icon name="cube-outline"></ion-icon> Novo Equipamento</h3>
+                        <button class="modal-close" onclick="closeModal()">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+                    <form id="form-equipamento">
+                        <div class="form-group">
+                            <label>Nome do Equipamento</label>
+                            <input type="text" id="eq-nome" class="form-control" required
+                                placeholder="Ex: Projetor Epson S41+">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Categoria</label>
+                                <select id="eq-tipo" class="form-control" required>
+                                    <option value="TI">TI</option>
+                                    <option value="Maquinário">Maquinário</option>
+                                    <option value="Móveis">Móveis</option>
+                                    <option value="Eletrônicos">Eletrônicos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select id="eq-status" class="form-control" required>
+                                    <option value="Disponível">Disponível</option>
+                                    <option value="Em Uso">Em Uso</option>
+                                    <option value="Em Trânsito">Em Trânsito</option>
+                                    <option value="Manutenção">Manutenção</option>
+                                    <option value="Retornado">Retornado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Responsável</label>
+                            <select id="eq-responsavel" class="form-control">
+                                <option value="">-- Nenhum --</option>
+                                <!-- Populated dynamically from Firebase 'pessoas' -->
+                            </select>
+                        </div>
+
+                        <div class="form-group"
+                            style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; margin-bottom: 1.5rem; background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(139, 92, 246, 0.3);">
+                            <input type="checkbox" id="eq-uso-pessoal"
+                                style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
+                            <label for="eq-uso-pessoal"
+                                style="margin-bottom: 0; cursor: pointer; color: var(--text-main); font-weight: 500;">Equipamento
+                                de Uso Pessoal</label>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: auto;">Sem
+                                localização fixa fixa no mapa</span>
+                        </div>
+
+                        <div id="campos-geolocalizacao">
+                            <div class="form-group">
+                                <label>Destino / Localização</label>
+                                <input type="text" id="eq-destino" class="form-control"
+                                    placeholder="Ex: Escola José Soares">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Latitude</label>
+                                    <input type="number" id="eq-lat" step="any" class="form-control"
+                                        placeholder="-9.7460">
+                                </div>
+                                <div class="form-group">
+                                    <label>Longitude</label>
+                                    <input type="number" id="eq-lng" step="any" class="form-control"
+                                        placeholder="-37.4350">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary"
+                            style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                            <ion-icon name="checkmark-outline"></ion-icon> Cadastrar Equipamento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

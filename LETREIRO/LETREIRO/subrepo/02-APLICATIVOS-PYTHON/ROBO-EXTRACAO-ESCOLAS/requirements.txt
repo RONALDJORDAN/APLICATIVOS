@@ -1,0 +1,9 @@
+flask
+pandas
+openpyxl
+customtkinter
+beautifulsoup4
+playwright
+pyautogui
+pytesseract
+Pillow

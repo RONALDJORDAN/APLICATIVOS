@@ -1,0 +1,723 @@
+<Window x:Class="LetreiroDigital.Views.WelcomeWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Letreiro Digital — Bem-vindo!" Height="760" Width="620"
+    WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+    Background="Transparent" WindowStyle="None" AllowsTransparency="True"
+    BorderThickness="0">
+
+    <Window.Resources>
+        <!-- Gradientes -->
+        <RadialGradientBrush x:Key="BgGradient" Center="0.5,0" GradientOrigin="0.5,0" RadiusX="0.8"
+            RadiusY="1">
+            <GradientStop Color="#1F2937" Offset="0" />
+            <GradientStop Color="#111827" Offset="0.5" />
+            <GradientStop Color="#030712" Offset="1" />
+        </RadialGradientBrush>
+
+        <LinearGradientBrush x:Key="AccentGold" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="#F59E0B" Offset="0" />
+            <GradientStop Color="#FBBF24" Offset="0.5" />
+            <GradientStop Color="#F59E0B" Offset="1" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="CardBg" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#1C2333" Offset="0" />
+            <GradientStop Color="#151C2B" Offset="1" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PremiumCard" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1E1A0A" Offset="0" />
+            <GradientStop Color="#241F0B" Offset="1" />
+        </LinearGradientBrush>
+
+        <!-- Estilos gerais -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        </Style>
+
+        <!-- Botão primário -->
+        <Style x:Key="BtnPrimary" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#D97706" Offset="0" />
+                        <GradientStop Color="#F59E0B" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="8"
+                            Background="{TemplateBinding Background}">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#F59E0B" BlurRadius="14" ShadowDepth="0"
+                                    Opacity="0.4" />
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.85" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.7" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Botão outline -->
+        <Style x:Key="BtnOutline" TargetType="Button">
+            <Setter Property="Foreground" Value="#94A3B8" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="6"
+                            Background="#1A2133" BorderBrush="#2D3748" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#232D42" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Estilo INPUTS -->
+        <Style x:Key="InputStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#161B22" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="CaretBrush" Value="#F59E0B" />
+            <Setter Property="BorderBrush" Value="#30363D" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="10,0" />
+            <Setter Property="Height" Value="42" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="6">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="0"
+                                    VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#8B949E" />
+                                <Setter TargetName="border" Property="Background" Value="#1C2128" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#F59E0B" />
+                                <Setter TargetName="border" Property="Background" Value="#1C2128" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ScrollBar dark -->
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="IsTabStop" Value="false" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border x:Name="rectangle" Background="#2D3748" CornerRadius="4"
+                            Height="{TemplateBinding Height}" SnapsToDevicePixels="True" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="rectangle" Property="Background" Value="#4A5568" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false" />
+            <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Margin" Value="0,0,2,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid x:Name="Bg" SnapsToDevicePixels="true">
+                            <Track x:Name="PART_Track" IsDirectionReversed="true"
+                                IsEnabled="{TemplateBinding IsEnabled}">
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource ScrollBarThumb}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <!-- Sombra externa -->
+    <Border CornerRadius="16" Background="{StaticResource BgGradient}"
+        BorderBrush="#1E2A45" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect Color="#000000" BlurRadius="40" ShadowDepth="0" Opacity="0.7" />
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- ===== BARRA SUPERIOR ===== -->
+            <Border Grid.Row="0" Padding="16,10" Background="#08090F"
+                CornerRadius="16,16,0,0" MouseDown="TitleBar_MouseDown">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Border Width="28" Height="28" CornerRadius="6" Margin="0,0,10,0">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#F59E0B" Offset="0" />
+                                    <GradientStop Color="#D97706" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <TextBlock Text="L" FontSize="16" FontWeight="Black"
+                                Foreground="White" HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <TextBlock Text="Letreiro Digital" Foreground="#94A3B8" FontSize="13"
+                            VerticalAlignment="Center" />
+                    </StackPanel>
+                    <Button x:Name="btnClose" HorizontalAlignment="Right"
+                        Width="24" Height="24" Style="{StaticResource BtnOutline}"
+                        ToolTip="Fechar" Click="BtnClose_Click">
+                        <TextBlock Text="✕" Foreground="#64748B" FontSize="11"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Button>
+                </Grid>
+            </Border>
+
+            <!-- ===== HERO HEADER ===== -->
+            <Border Grid.Row="1" Padding="36,20,36,10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#0F1929" Offset="0" />
+                        <GradientStop Color="#0D1520" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <!-- Badge -->
+                    <Border HorizontalAlignment="Center" Padding="10,4" CornerRadius="20"
+                        Margin="0,0,0,14"
+                        BorderThickness="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#1A120A" Offset="0" />
+                                <GradientStop Color="#241A08" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#92400E" Offset="0" />
+                                <GradientStop Color="#B45309" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="✦" Foreground="#F59E0B" FontSize="10" Margin="0,0,6,0"
+                                VerticalAlignment="Center" />
+                            <TextBlock Text="ACESSO PREMIUM — LETREIRO DIGITAL" Foreground="#F59E0B"
+                                FontSize="9" FontWeight="Bold" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock Text="Bem-vindo ao" Foreground="#64748B" FontSize="15"
+                        HorizontalAlignment="Center" />
+                    <TextBlock HorizontalAlignment="Center">
+                        <Run Text="Letreiro Digital" Foreground="White" FontSize="30"
+                            FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock x:Name="lblSubtitulo"
+                        Text="Escolha seu plano e obtenha sua chave de ativação em minutos"
+                        Foreground="#64748B" FontSize="12" HorizontalAlignment="Center"
+                        Margin="0,8,0,0" TextWrapping="Wrap" TextAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+            <!-- ===== ÁREA DE CONTEÚDO (ETAPAS) ===== -->
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Disabled">
+                <Grid Margin="28,12,28,20">
+
+                    <!-- ══════════════════════════════════════════════ -->
+                    <!-- ETAPA 1: ESCOLHA DO PLANO                      -->
+                    <!-- ══════════════════════════════════════════════ -->
+                    <StackPanel x:Name="panelPlanos" Visibility="Visible">
+
+                        <!-- Indicador de etapas -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="0,0,0,20">
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#F59E0B">
+                                <TextBlock Text="1" Foreground="#0D0D00" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#2D3748" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#1E2A45">
+                                <TextBlock Text="2" Foreground="#475569" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#2D3748" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#1E2A45">
+                                <TextBlock Text="3" Foreground="#475569" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+
+                        <TextBlock Text="ESCOLHA SEU PLANO" Foreground="#475569" FontSize="9"
+                            FontWeight="Bold" Margin="0,0,0,16" HorizontalAlignment="Center" />
+
+                        <!-- Cards de planos -->
+                        <Grid Margin="0,0,0,22">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="12" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Card Mensal -->
+                            <Border Grid.Column="0" CornerRadius="12" x:Name="cardMensal"
+                                Background="{StaticResource CardBg}"
+                                BorderBrush="#2D3748" BorderThickness="1" Padding="18,16"
+                                Cursor="Hand" MouseDown="CardMensal_Click">
+                                <StackPanel>
+                                    <TextBlock Text="PLANO MENSAL" Foreground="#64748B" FontSize="9"
+                                        FontWeight="Bold" />
+                                    <TextBlock Margin="0,8,0,0">
+                                        <Run Text="R$ 29" Foreground="White" FontSize="26"
+                                            FontWeight="Black" />
+                                        <Run Text="/mês" Foreground="#64748B" FontSize="13" />
+                                    </TextBlock>
+                                    <Rectangle Height="1" Fill="#1E2A45" Margin="0,12,0,12" />
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="✓" Foreground="#22C55E"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Ativação imediata" Foreground="#94A3B8"
+                                                FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="✓" Foreground="#22C55E"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="1 dispositivo" Foreground="#94A3B8"
+                                                FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="✓" Foreground="#22C55E"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Suporte via e-mail"
+                                                Foreground="#94A3B8" FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="✓" Foreground="#22C55E"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Atualizações mensais"
+                                                Foreground="#94A3B8" FontSize="11" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Border x:Name="radioMensal" Margin="0,14,0,0" Height="3"
+                                        CornerRadius="2" Background="#2D3748" />
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Card Anual (destaque) -->
+                            <Border Grid.Column="2" CornerRadius="12" x:Name="cardAnual"
+                                Background="{StaticResource PremiumCard}"
+                                BorderThickness="1.5" Padding="18,16" Cursor="Hand"
+                                MouseDown="CardAnual_Click">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#92400E" Offset="0" />
+                                        <GradientStop Color="#D97706" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                                <StackPanel>
+                                    <Grid>
+                                        <TextBlock Text="PLANO ANUAL" Foreground="#F59E0B"
+                                            FontSize="9" FontWeight="Bold" />
+                                        <Border HorizontalAlignment="Right" Padding="6,2"
+                                            CornerRadius="10"
+                                            Background="{StaticResource AccentGold}">
+                                            <TextBlock Text="ECONOMIZE 30%" Foreground="#0D0D00"
+                                                FontSize="8" FontWeight="Bold" />
+                                        </Border>
+                                    </Grid>
+                                    <TextBlock Margin="0,8,0,0">
+                                        <Run Text="R$ 249" Foreground="White" FontSize="26"
+                                            FontWeight="Black" />
+                                        <Run Text="/ano" Foreground="#92400E" FontSize="13" />
+                                    </TextBlock>
+                                    <TextBlock Text="≈ R$ 20,75 por mês" Foreground="#92400E"
+                                        FontSize="11" Margin="0,2,0,0" />
+                                    <Rectangle Height="1" Fill="#2D1A00" Margin="0,12,0,12" />
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="★" Foreground="#F59E0B"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Ativação imediata" Foreground="#D4A27A"
+                                                FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="★" Foreground="#F59E0B"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="1 dispositivo" Foreground="#D4A27A"
+                                                FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="★" Foreground="#F59E0B"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Suporte prioritário"
+                                                Foreground="#D4A27A" FontSize="11" />
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                                            <TextBlock Text="★" Foreground="#F59E0B"
+                                                Margin="0,0,8,0" />
+                                            <TextBlock Text="Todas as atualizações"
+                                                Foreground="#D4A27A" FontSize="11" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Border x:Name="radioAnual" Margin="0,14,0,0" Height="3"
+                                        CornerRadius="2">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="#F59E0B" Offset="0" />
+                                                <GradientStop Color="#D97706" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+
+                        <!-- Botão avançar -->
+                        <Button x:Name="btnSeguirPlano" Style="{StaticResource BtnPrimary}"
+                            Height="48"
+                            Click="BtnSeguirPlano_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="SEGUIR PARA PAGAMENTO" FontWeight="Bold"
+                                    Foreground="White" />
+                                <TextBlock Text="  →" FontWeight="Bold" Foreground="White" />
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Link "já tenho chave" -->
+                        <TextBlock HorizontalAlignment="Center" Margin="0,16,0,0" Cursor="Hand"
+                            MouseDown="LinkJaTenhChave_Click">
+                            <Run Text="Já tenho uma chave de ativação" Foreground="#475569"
+                                FontSize="11" TextDecorations="Underline" />
+                        </TextBlock>
+                    </StackPanel>
+
+                    <!-- ══════════════════════════════════════════════ -->
+                    <!-- ETAPA 2: DADOS PESSOAIS                        -->
+                    <!-- ══════════════════════════════════════════════ -->
+                    <StackPanel x:Name="panelDados" Visibility="Collapsed">
+
+                        <!-- Indicador de etapas -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="0,0,0,20">
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#22C55E">
+                                <TextBlock Text="✓" Foreground="White" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#F59E0B" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#F59E0B">
+                                <TextBlock Text="2" Foreground="#0D0D00" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#2D3748" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#1E2A45">
+                                <TextBlock Text="3" Foreground="#475569" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Resumo do plano -->
+                        <Border CornerRadius="8" Padding="14,10" Margin="0,0,0,18"
+                            Background="#161B22" BorderBrush="#2D3748" BorderThickness="1">
+                            <Grid>
+                                <TextBlock x:Name="lblResumoPLano"
+                                    Text="Plano Anual — R$ 249/ano"
+                                    Foreground="#F59E0B" FontWeight="Bold" FontSize="13"
+                                    VerticalAlignment="Center" />
+                                <TextBlock Text="✎ Trocar" Foreground="#475569" FontSize="10"
+                                    HorizontalAlignment="Right" VerticalAlignment="Center"
+                                    Cursor="Hand" MouseDown="LinkVoltarPlano_Click"
+                                    TextDecorations="Underline" />
+                            </Grid>
+                        </Border>
+
+                        <TextBlock Text="SEUS DADOS" Foreground="#475569" FontSize="9"
+                            FontWeight="Bold" Margin="0,0,0,14" />
+
+                        <TextBlock Text="Nome completo *" Foreground="#64748B" FontSize="11"
+                            Margin="0,0,0,5" />
+                        <TextBox x:Name="txtNome" Style="{StaticResource InputStyle}"
+                            Margin="0,0,0,12" />
+
+                        <TextBlock Text="CPF ou CNPJ *" Foreground="#64748B" FontSize="11"
+                            Margin="0,0,0,5" />
+                        <TextBox x:Name="txtCpfCnpj" Style="{StaticResource InputStyle}"
+                            Margin="0,0,0,12" />
+
+                        <TextBlock Text="E-mail *" Foreground="#64748B" FontSize="11"
+                            Margin="0,0,0,5" />
+                        <TextBox x:Name="txtEmail" Style="{StaticResource InputStyle}"
+                            Margin="0,0,0,12" />
+
+                        <TextBlock Text="Telefone / WhatsApp" Foreground="#64748B" FontSize="11"
+                            Margin="0,0,0,5" />
+                        <TextBox x:Name="txtTelefone" Style="{StaticResource InputStyle}"
+                            Margin="0,0,0,22" />
+
+                        <Button x:Name="btnAvancar" Style="{StaticResource BtnPrimary}" Height="48"
+                            Click="BtnAvancar_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="CONTINUAR" FontWeight="Bold" Foreground="White" />
+                                <TextBlock Text="  →" FontWeight="Bold" Foreground="White" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button Content="← VOLTAR" Margin="0,10,0,0"
+                            Style="{StaticResource BtnOutline}" Height="34"
+                            Click="BtnVoltarParaPlanos_Click" />
+                    </StackPanel>
+
+                    <!-- ══════════════════════════════════════════════ -->
+                    <!-- ETAPA 3: PAGAMENTO                             -->
+                    <!-- ══════════════════════════════════════════════ -->
+                    <StackPanel x:Name="panelCheckout" Visibility="Collapsed">
+
+                        <!-- Indicador de etapas -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                            Margin="0,0,0,20">
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#22C55E">
+                                <TextBlock Text="✓" Foreground="White" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#22C55E" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#22C55E">
+                                <TextBlock Text="✓" Foreground="White" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <Rectangle Width="36" Height="2" Fill="#F59E0B" Margin="6,0" />
+                            <Border Width="28" Height="28" CornerRadius="14" Background="#F59E0B">
+                                <TextBlock Text="3" Foreground="#0D0D00" FontWeight="Bold"
+                                    FontSize="12"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+
+                        <TextBlock Text="MÉTODO DE PAGAMENTO" Foreground="#475569" FontSize="9"
+                            FontWeight="Bold" Margin="0,0,0,14" HorizontalAlignment="Center" />
+
+                        <!-- Seleção PIX / Cartão -->
+                        <Grid Margin="0,0,0,16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" x:Name="btnSelectPix" Height="44"
+                                Margin="0,0,6,0" Style="{StaticResource BtnOutline}"
+                                Click="BtnSelectPix_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="⬡ " FontSize="16" VerticalAlignment="Center" />
+                                    <TextBlock Text="PIX" FontWeight="Bold"
+                                        VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                            <Button Grid.Column="1" x:Name="btnSelectCard" Height="44"
+                                Margin="6,0,0,0" Style="{StaticResource BtnOutline}"
+                                Click="BtnSelectCard_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="💳 " FontSize="14" VerticalAlignment="Center" />
+                                    <TextBlock Text="CARTÃO" FontWeight="Bold"
+                                        VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+
+                        <!-- Área PIX -->
+                        <StackPanel x:Name="panelPix" Visibility="Visible">
+                            <Border Background="#161B22" CornerRadius="12" Padding="20"
+                                BorderBrush="#30363D" BorderThickness="1">
+                                <StackPanel>
+                                    <TextBlock x:Name="lblPixStatus" Text="⏳ Gerando QR Code..."
+                                        Foreground="#94A3B8" FontSize="12"
+                                        HorizontalAlignment="Center"
+                                        Margin="0,0,0,10" />
+                                    <Image x:Name="imgQrCode" Width="180" Height="180"
+                                        Margin="0,0,0,12" />
+                                    <TextBlock
+                                        Text="Escaneie com o app do banco ou copie o código abaixo"
+                                        Foreground="#64748B" FontSize="11"
+                                        HorizontalAlignment="Center"
+                                        TextWrapping="Wrap" TextAlignment="Center" />
+                                    <TextBox x:Name="txtPixCopy" IsReadOnly="True"
+                                        Style="{StaticResource InputStyle}" Margin="0,14,0,8"
+                                        FontSize="10" />
+                                    <Button Content="📋  COPIAR CÓDIGO PIX"
+                                        Style="{StaticResource BtnOutline}" Height="34"
+                                        Click="BtnCopyPix_Click" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <!-- Área Cartão -->
+                        <StackPanel x:Name="panelCard" Visibility="Collapsed">
+                            <Border Background="#161B22" CornerRadius="12" Padding="20"
+                                BorderBrush="#30363D" BorderThickness="1">
+                                <StackPanel>
+                                    <TextBlock Text="Nome impresso no cartão" Foreground="#64748B"
+                                        FontSize="11" Margin="0,0,0,5" />
+                                    <TextBox x:Name="txtCardHolder"
+                                        Style="{StaticResource InputStyle}" Margin="0,0,0,12" />
+
+                                    <TextBlock Text="Número do cartão" Foreground="#64748B"
+                                        FontSize="11" Margin="0,0,0,5" />
+                                    <TextBox x:Name="txtCardNumber"
+                                        Style="{StaticResource InputStyle}" Margin="0,0,0,12" />
+
+                                    <Grid Margin="0,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="Mês" Foreground="#64748B" FontSize="11"
+                                                Margin="0,0,0,5" />
+                                            <TextBox x:Name="txtCardMonth"
+                                                Style="{StaticResource InputStyle}" MaxLength="2" />
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Text="Ano" Foreground="#64748B" FontSize="11"
+                                                Margin="0,0,0,5" />
+                                            <TextBox x:Name="txtCardYear"
+                                                Style="{StaticResource InputStyle}" MaxLength="4" />
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="4">
+                                            <TextBlock Text="CVV" Foreground="#64748B" FontSize="11"
+                                                Margin="0,0,0,5" />
+                                            <TextBox x:Name="txtCardCvv"
+                                                Style="{StaticResource InputStyle}" MaxLength="4" />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Button x:Name="btnPagarCard"
+                                        Style="{StaticResource BtnPrimary}"
+                                        Height="46" Margin="0,18,0,0" Click="BtnPagarCard_Click">
+                                        <TextBlock Text="PAGAR AGORA" FontWeight="Bold"
+                                            Foreground="White" />
+                                    </Button>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <Button Content="← VOLTAR" Margin="0,14,0,0"
+                            Style="{StaticResource BtnOutline}" Height="34" Click="BtnVoltar_Click" />
+                    </StackPanel>
+
+                    <!-- ══════════════════════════════════════════════ -->
+                    <!-- ETAPA 4: SUCESSO                               -->
+                    <!-- ══════════════════════════════════════════════ -->
+                    <StackPanel x:Name="panelSucesso" Visibility="Collapsed"
+                        VerticalAlignment="Center">
+                        <TextBlock Text="🎉" FontSize="52" HorizontalAlignment="Center"
+                            Margin="0,10,0,16" />
+                        <TextBlock Text="PAGAMENTO CONFIRMADO!" Foreground="#22C55E" FontSize="20"
+                            FontWeight="Black" HorizontalAlignment="Center" />
+                        <TextBlock Text="Sua licença foi ativada com sucesso." Foreground="#64748B"
+                            FontSize="12" HorizontalAlignment="Center" Margin="0,6,0,0" />
+                        <TextBlock Text="Chave de ativação:" Foreground="#94A3B8"
+                            Margin="0,24,0,8" HorizontalAlignment="Center" />
+                        <Border Background="#161B22" CornerRadius="8" Padding="16"
+                            BorderBrush="#00FF88" BorderThickness="1">
+                            <TextBlock x:Name="txtChaveGerada" Text="Verificando..."
+                                Foreground="#00FF88" FontSize="20" FontWeight="Black"
+                                HorizontalAlignment="Center" TextWrapping="Wrap"
+                                TextAlignment="Center" />
+                        </Border>
+                        <Button Content="CONCLUIR E ATIVAR" Foreground="White"
+                            Style="{StaticResource BtnPrimary}" Height="50" Margin="0,28,0,0"
+                            Click="BtnConcluir_Click" />
+                    </StackPanel>
+
+                    <!-- Mensagem de status -->
+                    <Border x:Name="borderStatus" CornerRadius="6" Padding="12,8" Margin="0,16,0,0"
+                        Background="Transparent" Visibility="Collapsed"
+                        HorizontalAlignment="Stretch">
+                        <TextBlock x:Name="lblStatus" Text="" FontSize="12" FontWeight="SemiBold"
+                            HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" />
+                    </Border>
+
+                </Grid>
+            </ScrollViewer>
+
+            <!-- ===== RODAPÉ ===== -->
+            <Border Grid.Row="3" Padding="28,12" Background="#08090F"
+                CornerRadius="0,0,16,16" BorderBrush="#1E2A45" BorderThickness="0,1,0,0">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Run Text="🔒 " FontSize="11" />
+                        <Run Text="Pagamento seguro via Asaas" Foreground="#475569" FontSize="10" />
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="PIX  •  Cartão" Foreground="#374151"
+                            FontSize="10" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Border>
+
+</Window>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Aluno - Carisma SMC</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Tema de Cores do Portal do Aluno (Verde, Azul, Amarelo) */
+        :root {
+            --primary: #4caf50;
+            /* Verde Escuro/Vibrante */
+            --primary-glow: rgba(76, 175, 80, 0.4);
+            --secondary: #2196f3;
+            /* Azul Claro/Vibrante */
+            --accent: #ffeb3b;
+            /* Amarelo */
+
+            /* Ajustando gradientes para usar o verde e azul */
+            --bg-card: #121815;
+            /* Um fundo bem levemente esverdeado/azulado escuro para harmonizar */
+            --bg-lighter: #1a221e;
+        }
+
+        /* Additional styling for dashboard forms */
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--bg-main);
+        }
+
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .auth-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .auth-logo {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .auth-box h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .auth-box p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Dashboard specific */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        .user-profile {
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: rgba(242, 95, 34, 0.1);
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            margin-top: auto;
+            color: #ff4d4f;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 77, 79, 0.1);
+            color: #ff4d4f;
+        }
+
+        .header-dash {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Notice Card */
+        .notice-card {
+            background: linear-gradient(135deg, rgba(242, 95, 34, 0.1), rgba(230, 168, 34, 0.1));
+            border: 1px solid rgba(242, 95, 34, 0.3);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notice-text h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-text p {
+            color: var(--text-secondary);
+        }
+
+        /* Big Check-in Button */
+        .checkin-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg-card);
+            border: 1px dashed var(--border-color);
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+        }
+
+        .btn-checkin {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--bg-lighter), var(--bg-main));
+            color: var(--primary);
+            font-size: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 2px var(--primary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn-checkin:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(242, 95, 34, 0.4), inset 0 0 0 4px var(--primary);
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .btn-checkin.success {
+            background: #2e7d32;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.5);
+            border-color: #2e7d32;
+            pointer-events: none;
+        }
+
+        /* History Table */
+        .table-container {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--bg-lighter);
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-badge.present {
+            background: rgba(46, 125, 50, 0.2);
+            color: #4caf50;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Materials Grid */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .material-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .material-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .material-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .material-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .material-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        /* Schedule List */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .schedule-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .schedule-date {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            min-width: 80px;
+            padding-right: 2rem;
+            border-right: 2px solid var(--border-color);
+        }
+
+        .schedule-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .schedule-details p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Notices Feed */
+        .notices-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .notice-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .notice-item.important {
+            border-left: 4px solid var(--primary);
+        }
+
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .notice-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .important .notice-tag {
+            background: rgba(242, 95, 34, 0.2);
+            color: var(--primary);
+        }
+
+        .notice-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .notice-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Photo Attendance Modal */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .photo-modal.active {
+            display: flex;
+        }
+
+        .photo-preview-container {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 3/4;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        #photo-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-actions {
+            display: flex;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn-photo {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-photo-confirm {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-photo-cancel {
+            background: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 1.5rem;
+            }
+
+            .notice-card {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .schedule-date {
+                border-right: none;
+                border-bottom: 2px solid var(--border-color);
+                padding-right: 0;
+                padding-bottom: 0.5rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Area (hidden by default if user logged in) -->
+    <div id="login-section" class="auth-container">
+        <div class="auth-box">
+            <a href="index.html" class="logo auth-logo">
+                <span class="logo-bold">CARISMA</span>
+                <span class="logo-light">SMC</span>
+            </a>
+            <h2>Bem-vindo de volta</h2>
+            <p>Faça login para acessar o portal do aluno</p>
+
+            <form id="formLogin" class="signup-form">
+                <div class="form-group" style="text-align: left;">
+                    <label for="login-user">Usuário (1º Nome + Data de Nascimento)</label>
+                    <input type="text" id="login-user" placeholder="Ex: joao15052000" style="text-transform: lowercase;"
+                        required>
+                </div>
+                <div class="form-group" style="text-align: left;">
+                    <label for="login-senha">Senha (Sua Data de Nascimento)</label>
+                    <input type="password" id="login-senha" placeholder="Ex: 15052000" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block mt-4">Entrar no Sistema <i
+                        class="ph ph-sign-in"></i></button>
+            </form>
+            <p class="mt-4" style="font-size: 0.9rem;">
+                Ainda não tem conta? <a href="index.html#inscricao">Matricule-se</a><br><br>
+                <a href="index.html"><i class="ph ph-arrow-left"></i> Voltar para o site principal</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Dashboard Area (hidden by default if user not logged in) -->
+    <div id="dashboard-section" class="dashboard-container" style="display: none;">
+
+        <aside class="sidebar">
+            <a href="index.html" class="logo">
+                <span class="logo-bold">CARISMA</span>
+                <span class="logo-light">SMC</span>
+            </a>
+
+            <div class="user-profile">
+                <div class="avatar-container"
+                    style="position: relative; width: 80px; height: 80px; margin: 0 auto 1.5rem auto;">
+                    <div id="user-avatar" class="avatar"
+                        style="width: 100%; height: 100%; margin: 0; cursor: pointer; position: relative; overflow: hidden;">
+                        <i class="ph ph-user"></i>
+                    </div>
+                    <button id="btn-change-photo"
+                        style="position: absolute; bottom: 0; right: 0; background: var(--primary); color: #fff; border: none; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid var(--bg-card); z-index: 2;">
+                        <i class="ph ph-camera"></i>
+                    </button>
+                    <input type="file" id="user-photo-input" hidden accept="image/*">
+                </div>
+                <h3 id="user-name">Carregando...</h3>
+                <p id="user-role" style="color: var(--text-secondary); font-size: 0.9rem;">Aluno</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-tab="overview"><i class="ph ph-squares-four"></i> Visão
+                    Geral</a>
+                <a href="#" class="sidebar-link" data-tab="materials"><i class="ph ph-books"></i> Materiais</a>
+                <a href="#" class="sidebar-link" data-tab="schedule"><i class="ph ph-calendar"></i> Cronograma</a>
+                <a href="#" class="sidebar-link" data-tab="notices"><i class="ph ph-megaphone"></i> Avisos</a>
+                <a href="#" id="btn-logout" class="sidebar-link logout-btn"><i class="ph ph-sign-out"></i>
+                    Desconectar</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <!-- Aba: Visão Geral (Presença) -->
+            <div id="tab-overview" class="tab-pane active">
+                <div class="header-dash">
+                    <div>
+                        <h1 class="section-title" style="margin-bottom: 0.5rem; font-size: 2rem;">Controle de
+                            <span>Presença</span>
+                        </h1>
+                        <p style="color: var(--text-secondary);">Registre sua presença nas aulas confirmadas.</p>
+                    </div>
+                    <div id="current-date"
+                        style="font-family: var(--font-heading); font-weight: 600; color: var(--primary);"></div>
+                </div>
+
+                <div class="notice-card" id="notice-card">
+                    <div class="notice-text">
+                        <h3 id="class-status-title">Próxima Aula</h3>
+                        <p id="class-status-desc">A verificação de presença estará disponível nos horários de aula
+                            (Segundas
+                            e Terças, a partir das 19h).</p>
+                    </div>
+                    <div class="notice-icon">
+                        <i class="ph ph-calendar-check" style="font-size: 3rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+
+                <div class="checkin-container">
+                    <button id="btn-checkin" class="btn-checkin" disabled>
+                        <i class="ph ph-fingerprint"></i>
+                    </button>
+                    <h3 id="checkin-msg">Presença Bloqueada</h3>
+                    <p id="checkin-submsg" style="color: var(--text-secondary); margin-top: 0.5rem;">Fora do horário de
+                        aula</p>
+                </div>
+
+                <h3 style="margin-bottom: 1rem;">Histórico de Presenças</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Módulo / Aula</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendance-history">
+                            <!-- Filled via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Aba: Materiais -->
+            <div id="tab-materials" class="tab-pane">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Materiais de <span>Estudo</span>
+                </h1>
+                <div class="materials-grid">
+                    <div class="material-card">
+                        <div class="material-icon"><i class="ph ph-file-pdf"></i></div>
+                        <div class="material-info">
+                            <h3>Apostila Módulo 1</h3>
+                            <p>Conteúdo completo sobre Fundamentos do Carisma.</p>
+                            <a href="#" class="btn-download"><i class="ph ph-download-simple"></i> Baixar PDF</a>
+                        </div>
+                    </div>
+                    <div class="material-card">
+                        <div class="material-icon"><i class="ph ph-video-camera"></i></div>
+                        <div class="material-info">
+                            <h3>Aula Inaugural</h3>
+                            <p>Gravação da aula de boas-vindas do semestre.</p>
+                            <a href="#" class="btn-download"><i class="ph ph-play"></i> Assistir Aula</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba: Cronograma -->
+            <div id="tab-schedule" class="tab-pane">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Cronograma de <span>Aulas</span>
+                </h1>
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="schedule-date">03/03</div>
+                        <div class="schedule-details">
+                            <h3>Aula 01: Introdução ao Carisma</h3>
+                            <p><i class="ph ph-user"></i> Prof. Marcos Silva</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-date">10/03</div>
+                        <div class="schedule-details">
+                            <h3>Aula 02: A Identidade de Cristo</h3>
+                            <p><i class="ph ph-user"></i> Pra. Ana Souza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aba: Avisos -->
+            <div id="tab-notices" class="tab-pane">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Mural de <span>Avisos</span>
+                </h1>
+                <div class="notices-feed">
+                    <div class="notice-item important">
+                        <div class="notice-header">
+                            <span class="notice-tag">IMPORTANTE</span>
+                            <span class="notice-date">01/03/2026</span>
+                        </div>
+                        <h3>Início das Aulas</h3>
+                        <p>Sejam bem-vindos! Nossas aulas começam oficialmente nesta segunda-feira às 19h. Verifique seu
+                            material.</p>
+                    </div>
+                    <div class="notice-item">
+                        <div class="notice-header">
+                            <span class="notice-tag">EVENTO</span>
+                            <span class="notice-date">28/02/2026</span>
+                        </div>
+                        <h3>Retirada de Camisetas</h3>
+                        <p>As camisetas do curso estarão disponíveis para retirada na secretaria da Lagoinha a partir de
+                            amanhã.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Photo Capturing Elements -->
+    <input type="file" id="camera-input" accept="image/*" capture="user" style="display: none;">
+
+    <div id="photo-modal" class="photo-modal">
+        <h2 style="color: #fff; margin-bottom: 1.5rem;">Confirme sua Foto</h2>
+        <div class="photo-preview-container">
+            <img id="photo-preview" src="" alt="Sua foto">
+        </div>
+        <div class="photo-actions">
+            <button id="btn-cancel-photo" class="btn-photo btn-photo-cancel">
+                <i class="ph ph-x"></i> Refazer
+            </button>
+            <button id="btn-confirm-photo" class="btn-photo btn-photo-confirm">
+                <i class="ph ph-check"></i> Enviar Presença
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/aluno.js"></script>
+</body>
+
+</html>

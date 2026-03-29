@@ -1,0 +1,1095 @@
+Executing: git status
+Return code: 0
+STDOUT:
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    01-SITES-WEB/ALPHA_STUDIOS_V1/admin.html
+	deleted:    01-SITES-WEB/ALPHA_STUDIOS_V1/img.gif
+	deleted:    01-SITES-WEB/ALPHA_STUDIOS_V1/index.html
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC0441-a.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC1636-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC1639-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC1642-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC9020-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC9030-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/DSC9036-HDR.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/alpha_studio.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/bg_triangle_3.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/compartilhado_01.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/compartilhado_02.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/compartilhado_03.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/compartilhado_04.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/compartilhado_05.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/fachada-low.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/fachada-new.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/fadi-sorocaba.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/fatec-sorocaba.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_casa.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_contrato.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_pin.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_pin_gray.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_telefone-1.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/icon_whatsapp.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/img.gif
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual-2-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual-3-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual-4-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual-5.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual_01.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual_02-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual_03-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual_04-1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/individual_05-2.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_orange(1).jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_orange.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_red(1).jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_red.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_yellow(1).jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/line_yellow.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/logo-3.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/logo_02.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/logo_sticky.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/minimercado1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/minimercado2.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/puc-sorocaba.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/rapaz2-300x300.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/rapaz2.png
+	deleted:    "01-SITES-WEB/ALPHA_STUDIO_V3/assets/rodovia\314\201ria-sorocaba.png"
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/sala_estudo1.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/sala_estudo2.jpg
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/spotlight-poi3_hdpi.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/transparent.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/uniso-sorocaba.png
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(1)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(10)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(11)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(2)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(3)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(4)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(5)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(6)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(7)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(8)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/assets/vt/vt(9)
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/63b6aecf442ea3718fae5daa89c33f17.min.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/give.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/rs6.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/style_bundle_0.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/style_bundle_1.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/style_bundle_2.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/css/v1_identity.css
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/index.html
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/5d4768fbf1c0feed1fd9667cd26c3957.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/common.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/controls.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/directions.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/fbevents.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/geometry.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/give.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/googlesitekit-events-provider-contact-form-7-40476021fb6e59177033.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/hooks.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/i18n.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/index(1).js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/index.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/infowindow.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/jquery-migrate.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/jquery.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/log.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/map.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/marker.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/onion.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/rbtools.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/rs6.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/script_bundle_0.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/script_bundle_1.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/script_bundle_2.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/util.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/v1_main.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/vanilla-masker.min.js
+	deleted:    01-SITES-WEB/ALPHA_STUDIO_V3/js/wp-emoji-release.min.js
+	deleted:    "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/19012026.jpeg"
+	deleted:    "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/brasil.css"
+	deleted:    "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/index.html"
+	deleted:    "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/yantec/YANTEC.PY"
+	deleted:    01-SITES-WEB/MANUAL-YANTEC/assets/css/style.css
+	deleted:    01-SITES-WEB/MANUAL-YANTEC/assets/img/yantec-logo.svg
+	deleted:    01-SITES-WEB/MANUAL-YANTEC/index.html
+	deleted:    01-SITES-WEB/MANUAL-YANTEC/manual.html
+	deleted:    01-SITES-WEB/MANUAL-YANTEC/video-aulas.html
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/CRONOGRAMA PARA CULTO DA VIRADA 2025.pdf
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/CRONOGRAMA PARA CULTO DE QUARTA LAGOINHA.pdf
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/icon_avaliacao.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/icon_game.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/icon_nivelamento.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/icon_tv.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/img-2.svg
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/logo-2.svg
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/logo_padrao_innov.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_ceo_1769111121462.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_cto_1769111135018.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_design_1769111177458.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_dev_1769111148647.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_marketing_1769111191020.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/team_member_pedagogy_1769111163578.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/testimonial_coordinator_1769111232813.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/testimonial_principal_1769111245805.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/arquivos_innov/testimonial_teacher_1_1769111218421.png
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/contato.html
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/css/style.css
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/home.html
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/js/scripts.js
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/sobre.html
+	deleted:    01-SITES-WEB/NEW-INNOV-SITE/solucoes.html
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/1.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/2.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/3.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/647a35a3ca789fb4b07a6975_Vector 10.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-3.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-4.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/19.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/20.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/26.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/29.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/6478fa8d670803e4453a01fa_Image-min.png
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed1.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed2.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed3.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed4.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed5.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed6.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed7.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed8.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/Flexeiras.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/barreiras_do_piaui.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/capit\303\243o_ger\303\241sio_oliveira.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/caridade_piaui.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/col\303\264nia_do_piaui.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/curvelo.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/feliz_deserto.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/fronteiras.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/inhapi.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/maragogi.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/monte_alegre_do_piaui.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/nova_santa_rita.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/oriximin\303\241.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/patos_do_piaui.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/penedo.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/p\303\243o_de_a\303\247ucar.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/queimada_nova.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/razoares.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/reden\303\247\303\243o_do_gurgueia.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/roteiro.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santaluz.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santana_dos_montes.svg
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santo_ant\303\264nio_de_padua.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/sert\303\242nia.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/simpl\303\255cio_mendes.svg"
+	deleted:    "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/s\303\243o_miguel_dos_campos.svg"
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/custom.css
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec2.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec3.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec4.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec5.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec6.webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/ed.png
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/ico-landing.init.js.download
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/img-1.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/img-2.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/img-3.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/img-4.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/logo-1.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/products.js
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/testimonial-1.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/testimonial-2.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/testimonial-3.svg
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/unnamed(39).webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/unnamed(57).webp
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/video.mp4
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/contato.html
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/index.html
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/produtos.html
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/sobre.html
+	deleted:    01-SITES-WEB/NEW-YANTEC-SITE/video.mp4
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/Logo.png
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/preloader.gif
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/1026.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/1027.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/1028.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/1030.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0001.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0003.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0005.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0006.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0007.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0008.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0009.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0010.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0011.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0013.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/IMG0018.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/VER1019.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/VER1020.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/VER1021.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/VER1024.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/Images/vereadores/VER1025.jpeg
+	deleted:    01-SITES-WEB/NSTechWebCam/cadastromaterias.jsf.html
+	deleted:    01-SITES-WEB/NSTechWebCam/consultamaterias.jsf.html
+	deleted:    01-SITES-WEB/NSTechWebCam/css/nstechcss.css
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/components.css.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/components.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/core.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/datascroller/images/loading.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/fileupload/fileupload.css.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/fileupload/fileupload.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/fileupload/ie-anim.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/forms/password-meter.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_flat_0_2d5972_40x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_flat_0_4f4f4f_40x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_highlight-hard_80_85b2cb_1x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_highlight-soft_100_c4c4c4_1x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_inset-hard_65_85b2cb_1x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-bg_inset-soft_95_fef1ec_1x100.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-icons_2e83ff_256x240.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-icons_38667f_256x240.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-icons_616161_256x240.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-icons_898989_256x240.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/images/ui-icons_cd0a0a_256x240.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/jquery/jquery-plugins.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/jquery/jquery.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/layout/layout.css.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/layout/layout.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/lightbox/images/loading.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/messages/messages.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/outputpanel/images/loading.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/printer/printer.js.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/rating/rating.png.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/spacer/dot_clear.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/theme.css.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/javax.faces.resource/tree/images/line.gif.jsf
+	deleted:    01-SITES-WEB/NSTechWebCam/movimentaprocessos.jsf.html
+	deleted:    01-SITES-WEB/NSTechWebCam/offline/css/style.css
+	deleted:    01-SITES-WEB/NSTechWebCam/offline/index.html
+	deleted:    01-SITES-WEB/NSTechWebCam/offline/js/app.js
+	deleted:    01-SITES-WEB/NSTechWebCam/pautas-responsivo.html
+	deleted:    01-SITES-WEB/NSTechWebCam/pautas.jsf.html
+	deleted:    01-SITES-WEB/NSTechWebCam/vereadores.jsf.html
+	deleted:    01-SITES-WEB/NSTechWebCam/votacaoonline.jsf.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/app_icon.ico
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/assets/lagoinha.jpg
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/main.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/package.json
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/preload.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/index.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/renderer.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/style.css
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/index.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/renderer.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/style.css
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/index.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/renderer.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/style.css
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/index.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/renderer.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/style.css
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/index.html
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/renderer.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/style.css
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/constants.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/ipc-channels.js
+	deleted:    02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/utils.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/.firebaserc
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/.gitignore
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/BUILD_TEST_VERSION.bat
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/LEIA_ME.txt
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/.firebaserc
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/.gitignore
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/app.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/config.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/css/.placeholder
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/css/style.css
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/dashboard.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/database.rules.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/firebase.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/firestore.indexes.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/firestore.rules
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/index.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/js/.placeholder
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/js/app.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/js/config.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/licencas.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/package-lock.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/package.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/pagamentos.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/.firebaserc
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/.gitignore
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/404.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/app.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/config.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/css/.placeholder
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/css/style.css
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/dashboard.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/database.rules.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/firebase.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/firestore.indexes.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/firestore.rules
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/index.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/js/.placeholder
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/js/app.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/js/config.js
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/licencas.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/package-lock.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/package.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/pagamentos.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/relatorios.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public/style.css
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/relatorios.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/site.webmanifest
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/style.css
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_BACKEND_PHP/criar_cobranca.php
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_BACKEND_PHP/webhook.php
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/.gitignore
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/App.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/App.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/Fonts/digital-7-mono.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/Web/index.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/app_icon.ico
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/lagoinha.jpg
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Converters/Converters.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Converters/EqualityToBrushConverter.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/DOCS_LICENSING.md
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/DOCS_NOVAS_FUNCIONALIDADES.md
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-Bold.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-ExtraLight.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-Light.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-Medium.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-Regular.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-SemiBold.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/Oswald-VariableFont_wght.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/ana.pdf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/digital-7 (italic).ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/digital-7 (mono italic).ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/digital-7 (mono).ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/digital-7.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/led_board-7.ttf
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Fonts/led_board-7_screen.png
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/LetreiroDigital.csproj
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/LetreiroDigital_j0h1ssol_wpftmp.csproj
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/KeyboardShortcuts.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/LicenseModel.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/ModeConfig.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/PresetData.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/ScheduleItem.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Models/Theme.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/PLANO_CORRECAO.md
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/RELATORIO_FINAL.md
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/RELATORIO_VERIFICACAO.md
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/AsaasService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/DataService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/FirebaseService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/FontService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/HardwareId.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/LicenseService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/MonitorService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/ThemeManager.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/TimerService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Services/WebServerService.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/ViewModels/AppViewModel.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/ViewModels/BaseViewModel.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/BannerWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/BannerWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ClockWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ClockWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ColorPickerWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ColorPickerWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ControlWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ControlWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/EditorDialog.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/EditorDialog.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/GeneralSettingsWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/GeneralSettingsWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/LicenseWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/LicenseWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/MiniControllerWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/MiniControllerWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/QrCodeWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/QrCodeWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/RemoteAccessWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/RemoteAccessWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ScheduleWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ScheduleWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ThemeEditorWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/ThemeEditorWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/TvModeView.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/TvModeView.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/TvModeWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/TvModeWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/WelcomeWindow.xaml
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Views/WelcomeWindow.xaml.cs
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/organize.py
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/Assets/Web/index.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/Firebase.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.deps.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.exe
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.pdb
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.runtimeconfig.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LiteDB.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/Newtonsoft.Json.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/QRCoder.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/System.Management.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/System.Reactive.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/System.Runtime.InteropServices.WindowsRuntime.dll
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/data/app_config.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/wwwroot/index.html
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/database.rules.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/firebase.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/letreiro_v6.rar
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/log.txt
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.dgspec.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.g.props
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.g.targets
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/obj/project.assets.json
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/obj/project.nuget.cache
+	deleted:    03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/organize.ps1
+	deleted:    03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/.gitignore
+	deleted:    03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/README.md
+	deleted:    03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/ana.tex
+	deleted:    03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/main.tex
+	deleted:    03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/references.bib
+	deleted:    logo.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	01-SITES-WEB/ADMIN_SITE_LETREIRO/
+	01-SITES-WEB/EDUMO_SITES/
+	01-SITES-WEB/PROJETO_CAMARA/
+	01-SITES-WEB/SITES_ALPHA/
+	04-LETREIRO_DIGITAL/
+	delete_all_nested_git.py
+	git_output.txt
+	py_out.txt
+	run_git.py
+	run_git2.py
+	temp_sync.bat
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+STDERR:
+
+----------------------------------------
+Executing: git add .
+Return code: 0
+STDOUT:
+
+STDERR:
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/.firebaserc', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/atualizacoes.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/css/.placeholder', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/css/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/dashboard.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/database.rules.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/firebase.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/firestore.indexes.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/firestore.rules', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/js/.placeholder', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/js/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/js/atualizacoes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/js/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/licencas.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/pagamentos.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/.firebaserc', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/404.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/css/.placeholder', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/css/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/dashboard.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/database.rules.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/firebase.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/firestore.indexes.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/firestore.rules', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/js/.placeholder', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/js/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/js/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/licencas.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/pagamentos.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/relatorios.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/public/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/relatorios.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/site.webmanifest', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/ADMIN_SITE_LETREIRO/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/cadastromaterias.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/consultamaterias.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/css/nstechcss.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/javax.faces.resource/components.css.jsf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/javax.faces.resource/components.js.jsf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/javax.faces.resource/core.js.jsf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/javax.faces.resource/jquery/jquery-plugins.js.jsf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/javax.faces.resource/jquery/jquery.js.jsf', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/movimentaprocessos.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/pautas.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/vereadores.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '01-SITES-WEB/PROJETO_CAMARA/votacaoonline.jsf.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/.firebaserc', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_BACKEND_PHP/criar_cobranca.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_BACKEND_PHP/webhook.php', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Assets/updates/version.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Converters/EqualityToBrushConverter.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/DOCS_ATUALIZACOES.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/DOCS_LICENSING.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Models/LicenseModel.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Models/UpdateInfo.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/AsaasService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/FirebaseService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/HardwareId.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/LicenseService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/UpdateService.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/LicenseWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/LicenseWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/PreviewWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/PreviewWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/UpdateCenterWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/UpdateCenterWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/WelcomeWindow.xaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/WelcomeWindow.xaml.cs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/database.rules.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/firebase.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/firestore.indexes.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/firestore.rules', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/public/404.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '04-LETREIRO_DIGITAL/public/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'delete_all_nested_git.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'run_git.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'run_git2.py', LF will be replaced by CRLF the next time Git touches it
+
+----------------------------------------
+Executing: git commit -m Commit de todos os projetos: SITES-WEB, APLICATIVOS-PYTHON e LETREIRO-DIGITAL
+Return code: 0
+STDOUT:
+[main b95f2ee] Commit de todos os projetos: SITES-WEB, APLICATIVOS-PYTHON e LETREIRO-DIGITAL
+ 495 files changed, 4815 insertions(+), 4616 deletions(-)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/.firebaserc (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/.gitignore (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/app.js (54%)
+ create mode 100644 01-SITES-WEB/ADMIN_SITE_LETREIRO/atualizacoes.html
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/config.js (71%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/css/.placeholder (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/css/style.css (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/dashboard.html (69%)
+ create mode 100644 01-SITES-WEB/ADMIN_SITE_LETREIRO/database.rules.json
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/firebase.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/firestore.indexes.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/firestore.rules (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/index.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/js/.placeholder (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/js/app.js (100%)
+ create mode 100644 01-SITES-WEB/ADMIN_SITE_LETREIRO/js/atualizacoes.js
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/js/config.js (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/licencas.html (66%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/package-lock.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/package.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/pagamentos.html (94%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/.firebaserc (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/.gitignore (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/404.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/app.js (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/config.js (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/css/.placeholder (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/css/style.css (96%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/dashboard.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/database.rules.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/firebase.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/firestore.indexes.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/firestore.rules (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/index.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/js/.placeholder (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/js/app.js (69%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/js/config.js (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO/public}/licencas.html (68%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/package-lock.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/package.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/pagamentos.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/relatorios.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/public/style.css (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/relatorios.html (95%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/site.webmanifest (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE => 01-SITES-WEB/ADMIN_SITE_LETREIRO}/style.css (57%)
+ rename "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/19012026.jpeg" => "01-SITES-WEB/EDUMO_SITES/APRESENTA\303\207\303\203O-YANTEC/19012026.jpeg" (100%)
+ rename "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/brasil.css" => "01-SITES-WEB/EDUMO_SITES/APRESENTA\303\207\303\203O-YANTEC/brasil.css" (100%)
+ rename "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/index.html" => "01-SITES-WEB/EDUMO_SITES/APRESENTA\303\207\303\203O-YANTEC/index.html" (100%)
+ rename "01-SITES-WEB/APRESENTA\303\207\303\203O-YANTEC/yantec/YANTEC.PY" => "01-SITES-WEB/EDUMO_SITES/APRESENTA\303\207\303\203O-YANTEC/yantec/YANTEC.PY" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/MANUAL-YANTEC/assets/css/style.css (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/MANUAL-YANTEC/assets/img/yantec-logo.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/MANUAL-YANTEC/index.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/MANUAL-YANTEC/manual.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/MANUAL-YANTEC/video-aulas.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/CRONOGRAMA PARA CULTO DA VIRADA 2025.pdf (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/CRONOGRAMA PARA CULTO DE QUARTA LAGOINHA.pdf (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/icon_avaliacao.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/icon_game.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/icon_nivelamento.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/icon_tv.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/img-2.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/logo-2.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/logo_padrao_innov.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_ceo_1769111121462.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_cto_1769111135018.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_design_1769111177458.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_dev_1769111148647.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_marketing_1769111191020.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/team_member_pedagogy_1769111163578.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/testimonial_coordinator_1769111232813.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/testimonial_principal_1769111245805.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/arquivos_innov/testimonial_teacher_1_1769111218421.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/contato.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/css/style.css (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/home.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/js/scripts.js (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/sobre.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-INNOV-SITE/solucoes.html (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/1.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/1.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/2.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/2.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/3.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/3.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/647a35a3ca789fb4b07a6975_Vector 10.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/647a35a3ca789fb4b07a6975_Vector 10.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-3.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-3.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-4.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/Sobre n\303\263s_files/img-4.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/19.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/20.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/26.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/29.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/6478fa8d670803e4453a01fa_Image-min.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed1.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed2.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed3.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed4.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed5.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed6.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed7.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/E-DIARIO/ed8.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/Flexeiras.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/barreiras_do_piaui.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/capit\303\243o_ger\303\241sio_oliveira.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/capit\303\243o_ger\303\241sio_oliveira.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/caridade_piaui.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/col\303\264nia_do_piaui.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/col\303\264nia_do_piaui.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/curvelo.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/feliz_deserto.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/fronteiras.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/inhapi.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/maragogi.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/monte_alegre_do_piaui.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/nova_santa_rita.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/oriximin\303\241.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/oriximin\303\241.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/patos_do_piaui.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/penedo.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/p\303\243o_de_a\303\247ucar.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/p\303\243o_de_a\303\247ucar.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/queimada_nova.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/razoares.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/reden\303\247\303\243o_do_gurgueia.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/reden\303\247\303\243o_do_gurgueia.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/roteiro.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santaluz.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santana_dos_montes.svg (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santo_ant\303\264nio_de_padua.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/santo_ant\303\264nio_de_padua.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/sert\303\242nia.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/sert\303\242nia.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/simpl\303\255cio_mendes.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/simpl\303\255cio_mendes.svg" (100%)
+ rename "01-SITES-WEB/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/s\303\243o_miguel_dos_campos.svg" => "01-SITES-WEB/EDUMO_SITES/NEW-YANTEC-SITE/YanTec_files/MUNICIPIOS/s\303\243o_miguel_dos_campos.svg" (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/custom.css (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec2.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec3.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec4.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec5.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/e-comunidade/ec6.webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/ed.png (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/ico-landing.init.js.download (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/img-1.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/img-2.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/img-3.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/img-4.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/logo-1.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/products.js (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/testimonial-1.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/testimonial-2.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/testimonial-3.svg (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/unnamed(39).webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/unnamed(57).webp (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/YanTec_files/video.mp4 (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/contato.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/index.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/produtos.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/sobre.html (100%)
+ rename 01-SITES-WEB/{ => EDUMO_SITES}/NEW-YANTEC-SITE/video.mp4 (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/Logo.png (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/preloader.gif (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/1026.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/1027.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/1028.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/1030.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0001.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0003.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0005.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0006.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0007.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0008.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0009.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0010.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0011.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0013.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/IMG0018.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/VER1019.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/VER1020.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/VER1021.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/VER1024.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/Images/vereadores/VER1025.jpeg (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/cadastromaterias.jsf.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/consultamaterias.jsf.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/css/nstechcss.css (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/components.css.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/components.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/core.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/datascroller/images/loading.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/fileupload/fileupload.css.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/fileupload/fileupload.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/fileupload/ie-anim.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/forms/password-meter.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_flat_0_2d5972_40x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_flat_0_4f4f4f_40x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_highlight-hard_80_85b2cb_1x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_highlight-hard_80_c4c4c4_1x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_highlight-soft_100_c4c4c4_1x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_inset-hard_65_85b2cb_1x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-bg_inset-soft_95_fef1ec_1x100.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-icons_2e83ff_256x240.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-icons_38667f_256x240.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-icons_616161_256x240.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-icons_898989_256x240.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/images/ui-icons_cd0a0a_256x240.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/jquery/jquery-plugins.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/jquery/jquery.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/layout/layout.css.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/layout/layout.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/lightbox/images/loading.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/messages/messages.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/outputpanel/images/loading.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/printer/printer.js.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/rating/rating.png.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/spacer/dot_clear.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/theme.css.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/javax.faces.resource/tree/images/line.gif.jsf (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/movimentaprocessos.jsf.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/offline/css/style.css (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/offline/index.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/offline/js/app.js (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/pautas-responsivo.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/pautas.jsf.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/vereadores.jsf.html (100%)
+ rename 01-SITES-WEB/{NSTechWebCam => PROJETO_CAMARA}/votacaoonline.jsf.html (100%)
+ rename 01-SITES-WEB/{ => SITES_ALPHA}/ALPHA_STUDIOS_V1/admin.html (100%)
+ rename 01-SITES-WEB/{ => SITES_ALPHA}/ALPHA_STUDIOS_V1/img.gif (100%)
+ rename 01-SITES-WEB/{ => SITES_ALPHA}/ALPHA_STUDIOS_V1/index.html (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC0441-a.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC1636-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC1639-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC1642-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC9020-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC9030-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/DSC9036-HDR.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/alpha_studio.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/bg_triangle_3.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/compartilhado_01.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/compartilhado_02.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/compartilhado_03.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/compartilhado_04.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/compartilhado_05.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/fachada-low.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/fachada-new.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/fadi-sorocaba.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/fatec-sorocaba.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_casa.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_contrato.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_pin.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_pin_gray.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_telefone-1.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/icon_whatsapp.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/img.gif (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual-2-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual-3-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual-4-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual-5.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual_01.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual_02-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual_03-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual_04-1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/individual_05-2.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_orange(1).jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_orange.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_red(1).jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_red.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_yellow(1).jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/line_yellow.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/logo-3.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/logo_02.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/logo_sticky.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/minimercado1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/minimercado2.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/puc-sorocaba.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/rapaz2-300x300.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/rapaz2.png (100%)
+ rename "01-SITES-WEB/ALPHA_STUDIO_V3/assets/rodovia\314\201ria-sorocaba.png" => "01-SITES-WEB/SITES_ALPHA/ALPHA_STUDIO_V2/assets/rodovia\314\201ria-sorocaba.png" (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/sala_estudo1.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/sala_estudo2.jpg (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/spotlight-poi3_hdpi.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/transparent.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/uniso-sorocaba.png (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(1) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(10) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(11) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(2) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(3) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(4) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(5) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(6) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(7) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(8) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/assets/vt/vt(9) (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/63b6aecf442ea3718fae5daa89c33f17.min.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/give.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/rs6.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/style_bundle_0.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/style_bundle_1.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/style_bundle_2.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/css/v1_identity.css (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/index.html (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/5d4768fbf1c0feed1fd9667cd26c3957.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/common.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/controls.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/directions.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/fbevents.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/geometry.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/give.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/googlesitekit-events-provider-contact-form-7-40476021fb6e59177033.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/hooks.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/i18n.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/index(1).js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/index.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/infowindow.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/jquery-migrate.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/jquery.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/log.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/map.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/marker.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/onion.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/rbtools.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/rs6.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/script_bundle_0.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/script_bundle_1.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/script_bundle_2.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/util.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/v1_main.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/vanilla-masker.min.js (100%)
+ rename 01-SITES-WEB/{ALPHA_STUDIO_V3 => SITES_ALPHA/ALPHA_STUDIO_V2}/js/wp-emoji-release.min.js (100%)
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/main.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/package.json
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/preload.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/index.html
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/renderer.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/banner/style.css
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/index.html
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/renderer.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/clock/style.css
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/index.html
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/renderer.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/control-panel/style.css
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/index.html
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/renderer.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/mini-controller/style.css
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/index.html
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/renderer.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/schedule/style.css
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/constants.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/ipc-channels.js
+ delete mode 100644 02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/src/shared/utils.js
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/app_icon.ico
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/Assets/lagoinha.jpg
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_DEV_PROJETO/PLANO_CORRECAO.md
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.pdb
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/database.rules.json
+ delete mode 100644 03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/letreiro_v6.rar
+ delete mode 100644 03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/.gitignore
+ delete mode 100644 03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/README.md
+ delete mode 100644 03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/ana.tex
+ delete mode 100644 03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/main.tex
+ delete mode 100644 03-DOCUMENTOS-LATEX/PROJETO-RELATORIO-LATEX/references.bib
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 04-LETREIRO_DIGITAL}/.firebaserc (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 04-LETREIRO_DIGITAL}/.gitignore (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/BUILD_TEST_VERSION.bat (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/LEIA_ME.txt (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/SET_VERSION.bat
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_BACKEND_PHP/criar_cobranca.php (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_BACKEND_PHP/webhook.php (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/.gitignore (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/App.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/App.xaml.cs (59%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Assets/Fonts/digital-7-mono.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Assets/Web/index.html (100%)
+ rename {02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON => 04-LETREIRO_DIGITAL/_DEV_PROJETO/Assets}/app_icon.ico (100%)
+ rename {02-APLICATIVOS-PYTHON/LETREIRO-DIGITAL-ELECTRON/assets => 04-LETREIRO_DIGITAL/_DEV_PROJETO/Assets}/lagoinha.jpg (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Assets/updates/version.json
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Converters/Converters.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Converters/EqualityToBrushConverter.cs (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/DOCS_ATUALIZACOES.md
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/DOCS_LICENSING.md (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/DOCS_NOVAS_FUNCIONALIDADES.md (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-Bold.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-ExtraLight.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-Light.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-Medium.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-Regular.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-SemiBold.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/Oswald-VariableFont_wght.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/ana.pdf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/digital-7 (italic).ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/digital-7 (mono italic).ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/digital-7 (mono).ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/digital-7.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/led_board-7.ttf (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Fonts/led_board-7_screen.png (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/LetreiroDigital.csproj (80%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/LetreiroDigital_j0h1ssol_wpftmp.csproj (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/LetreiroDigital_rwbruoiy_wpftmp.csproj
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/LetreiroDigital_sxrdhjdj_wpftmp.csproj
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/KeyboardShortcuts.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/LicenseModel.cs (71%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/ModeConfig.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/PresetData.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/ScheduleItem.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Models/Theme.cs (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Models/UpdateInfo.cs
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/PLANO_CORRECAO.md
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/RELATORIO_FINAL.md (74%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/RELATORIO_VERIFICACAO.md (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/AsaasService.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/DataService.cs (91%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/FirebaseService.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/FontService.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/HardwareId.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/LicenseService.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/MonitorService.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/ThemeManager.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/TimerService.cs (94%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Services/UpdateService.cs
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Services/WebServerService.cs (98%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/ViewModels/AppViewModel.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/ViewModels/BaseViewModel.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/BannerWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/BannerWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ClockWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ClockWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ColorPickerWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ColorPickerWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ControlWindow.xaml (93%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ControlWindow.xaml.cs (80%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/EditorDialog.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/EditorDialog.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/GeneralSettingsWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/GeneralSettingsWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/LicenseWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/LicenseWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/MiniControllerWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/MiniControllerWindow.xaml.cs (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/PreviewWindow.xaml
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/PreviewWindow.xaml.cs
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/QrCodeWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/QrCodeWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/RemoteAccessWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/RemoteAccessWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ScheduleWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ScheduleWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ThemeEditorWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/ThemeEditorWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/TvModeView.xaml (96%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/TvModeView.xaml.cs (95%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/TvModeWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/TvModeWindow.xaml.cs (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/UpdateCenterWindow.xaml
+ create mode 100644 04-LETREIRO_DIGITAL/_DEV_PROJETO/Views/UpdateCenterWindow.xaml.cs
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/WelcomeWindow.xaml (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/Views/WelcomeWindow.xaml.cs (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_DEV_PROJETO/organize.py (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/Assets/Web/index.html (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/Firebase.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.deps.json (99%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.dll (85%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.exe (99%)
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.pdb
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/LetreiroDigital.runtimeconfig.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/LiteDB.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/_VERSAO_TESTE_COM_LICENCA/Newtonsoft.Json.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA/wwwroot => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/Assets/Web}/index.html (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/Firebase.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LetreiroDigital.deps.json
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LetreiroDigital.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LetreiroDigital.exe
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LetreiroDigital.pdb
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LetreiroDigital.runtimeconfig.json
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/LiteDB.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6/Newtonsoft.Json.dll
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6}/QRCoder.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6}/System.Management.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6}/System.Reactive.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6}/System.Runtime.InteropServices.WindowsRuntime.dll (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_VERSAO_TESTE_COM_LICENCA => 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/Nova pasta/3.6}/data/app_config.json (85%)
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/QRCoder.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/System.Management.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/System.Reactive.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/System.Runtime.InteropServices.WindowsRuntime.dll
+ create mode 100644 04-LETREIRO_DIGITAL/_VERSAO_TESTE_COM_LICENCA/data/app_config.json
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF/_ADMIN_SITE/public => 04-LETREIRO_DIGITAL}/database.rules.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/firebase.json (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/firestore.indexes.json
+ create mode 100644 04-LETREIRO_DIGITAL/firestore.rules
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/log.txt (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.dgspec.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.g.props (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/obj/LetreiroDigital_j0h1ssol_wpftmp.csproj.nuget.g.targets (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/obj/project.assets.json (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/obj/project.nuget.cache (100%)
+ rename {03-APLICATIVOS-CSHARP/LETREIRO-DIGITAL-WPF => 04-LETREIRO_DIGITAL}/organize.ps1 (100%)
+ create mode 100644 04-LETREIRO_DIGITAL/public/404.html
+ create mode 100644 04-LETREIRO_DIGITAL/public/index.html
+ create mode 100644 delete_all_nested_git.py
+ create mode 100644 git_output.txt
+ delete mode 100644 logo.html
+ create mode 100644 py_out.txt
+ create mode 100644 run_git.py
+ create mode 100644 run_git2.py
+ create mode 100644 temp_sync.bat
+
+STDERR:
+
+----------------------------------------
+Executing: git push origin main
+Return code: 0
+STDOUT:
+
+STDERR:
+To https://github.com/CodAureo-DevStudio/Projetos_codaureo
+   4f9fb3c..b95f2ee  main -> main
+
+----------------------------------------

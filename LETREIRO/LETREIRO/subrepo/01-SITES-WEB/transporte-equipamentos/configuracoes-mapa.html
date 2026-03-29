@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | InnovPlay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <ion-icon name="play-outline"></ion-icon>
+                <span>InnovPlay</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><ion-icon name="grid-outline"></ion-icon> Dashboard</a></li>
+                    <li><a href="pessoas.html"><ion-icon name="people-outline"></ion-icon> Pessoas</a></li>
+                    <li><a href="equipamentos.html"><ion-icon name="list-outline"></ion-icon> Equipamentos</a></li>
+                    <li><a href="aplicacao.html"><ion-icon name="school-outline"></ion-icon> Aplicação</a></li>
+                    <li><a href="mapa.html"><ion-icon name="map-outline"></ion-icon> Mapa de Rotas</a></li>
+                    <li class="active"><a href="configuracoes.html"><ion-icon name="settings-outline"></ion-icon>
+                            Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar"></div>
+                <div class="user-info">
+                    <p class="name">Admin User</p>
+                    <p class="role">Controlador</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <!-- Loading Overlay -->
+            <div id="loading-overlay" class="hidden">
+                <div class="spinner"></div>
+                <p>Processando dados...</p>
+            </div>
+
+            <header class="anim-fade-up">
+                <div class="greeting">
+                    <h1><span>Configurações</span></h1>
+                    <p>Gerencie sua frota de veículos e pontos no mapa.</p>
+                </div>
+            </header>
+
+            <!-- Settings Sub-Navigation -->
+            <div class="settings-nav">
+                <a href="configuracoes.html"><ion-icon name="car-outline"></ion-icon> Veículos</a>
+                <a href="configuracoes-mapa.html" class="active"><ion-icon name="pin-outline"></ion-icon> Locais no
+                    Mapa</a>
+            </div>
+
+            <!-- Section 2: Pontos no Mapa -->
+            <section class="grid-2 anim-fade-up anim-delay-2">
+                <div class="chart-container">
+                    <div class="section-title">
+                        <ion-icon name="pin-outline"></ion-icon> Cadastrar Novo Ponto no Mapa
+                    </div>
+                    <form id="form-ponto-mapa">
+                        <div class="form-group">
+                            <label>Nome do Local</label>
+                            <input type="text" id="poi-nome" class="form-control" required
+                                placeholder="Ex: Escola Estadual X">
+                        </div>
+                        <div class="form-group">
+                            <label>Endereço / Referência</label>
+                            <input type="text" id="poi-endereco" class="form-control" required
+                                placeholder="Ex: Rua Central, 123">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Latitude</label>
+                                <input type="number" id="poi-lat" step="any" class="form-control" required
+                                    placeholder="-9.7460">
+                            </div>
+                            <div class="form-group">
+                                <label>Longitude</label>
+                                <input type="number" id="poi-lng" step="any" class="form-control" required
+                                    placeholder="-37.4350">
+                            </div>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Dica: Clique no
+                            mapa ao lado para preencher automaticamente.</p>
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                            <ion-icon name="pin-outline"></ion-icon> Salvar Ponto
+                        </button>
+                    </form>
+                </div>
+
+                <div class="chart-container">
+                    <div class="section-title"
+                        style="display: flex; align-items: center; gap: 0.5rem; justify-content: space-between;">
+                        <div><ion-icon name="map-outline"></ion-icon> Mapa e Lista de Pontos</div>
+                        <button type="button" onclick="seedEscolasMapa()" class="btn-primary"
+                            style="font-size: 0.8rem; padding: 0.4rem 0.8rem; height: auto;">
+                            <ion-icon name="download-outline"></ion-icon> Injetar Escolas
+                        </button>
+                    </div>
+                    <div id="settings-map"
+                        style="height: 300px; border-radius: 14px; margin-bottom: 1.5rem; z-index: 1;"></div>
+                    <div class="table-responsive">
+                        <table class="glass-table" id="tabela-pontos">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Endereço</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aureo Hub | Métricas de Uptime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ─── METRIC BLOCKS ─── */
+        .metric-block { 
+            background: rgba(0, 0, 0, 0.2); 
+            border: 1px solid var(--border); 
+            border-radius: 16px; 
+            padding: 1.5rem; 
+            margin-bottom: 1.2rem;
+        }
+        .metric-block-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ─── HERO AVAILABILITY ─── */
+        .hero-avail {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .hero-number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+        .hero-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .hero-arrow {
+            color: var(--success);
+            font-size: 1rem;
+            margin-left: 6px;
+        }
+        .enterprise-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,255,149,0.08);
+            border: 1px solid rgba(0,255,149,0.2);
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--success);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .enterprise-tag i { font-size: 0.85rem; }
+
+        /* ─── SERVICE ROW ─── */
+        .svc-row {
+            margin-bottom: 1.5rem;
+        }
+        .svc-row:last-child { margin-bottom: 0; }
+        .svc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+        .svc-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+        }
+        .svc-pct {
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .svc-pct.ok   { color: var(--success); }
+        .svc-pct.warn { color: var(--warning); }
+
+        /* ─── PROGRESS BAR ─── */
+        .bar-track {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1.5s ease;
+        }
+        .bar-fill.ok   { background: var(--success); box-shadow: 0 0 8px rgba(0,255,149,0.4); width: 99.9%; }
+        .bar-fill.warn { background: var(--warning); box-shadow: 0 0 8px rgba(255,184,34,0.4); width: 85%; }
+
+        /* ─── HEATMAP TIMELINE ─── */
+        .heatmap-legend {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .heatmap-legend span {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .heatmap-legend .legend-dots {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-dot {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.62rem;
+            color: var(--text-muted);
+        }
+        .legend-dot::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+        .legend-dot.up::before   { background: var(--success); }
+        .legend-dot.down::before { background: var(--danger); }
+
+        .timeline {
+            display: flex;
+            gap: 3px;
+            height: 32px;
+        }
+        .timeline-chunk {
+            flex: 1;
+            border-radius: 3px;
+            background: var(--success);
+            opacity: 0.75;
+            transition: all 0.2s;
+            min-width: 3px;
+        }
+        .timeline-chunk:hover {
+            opacity: 1;
+            transform: scaleY(1.3);
+            cursor: pointer;
+        }
+        .timeline-chunk.down { background: var(--danger); }
+
+        .heatmap-dates {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        /* ─── MINI STATS ROW ─── */
+        .mini-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .mini-stat {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .mini-stat .ms-val {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .mini-stat .ms-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ═══════════════════════════════════
+           iPhone 14 Pro Max (430px)
+        ═══════════════════════════════════ */
+        @media (max-width: 430px) {
+            .metric-block { padding: 1rem; border-radius: 12px; margin-bottom: 0.8rem; }
+
+            .hero-avail { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .hero-number { font-size: 2rem; }
+            .hero-label  { font-size: 0.7rem; }
+            .hero-arrow  { font-size: 0.8rem; }
+            .enterprise-tag { font-size: 0.62rem; padding: 6px 10px; }
+            .enterprise-tag i { font-size: 0.72rem; }
+
+            .svc-name { font-size: 0.75rem; }
+            .svc-pct  { font-size: 0.75rem; }
+            .bar-track { height: 6px; }
+
+            .metric-block-title { font-size: 0.85rem; }
+
+            .timeline { height: 26px; gap: 2px; }
+            .heatmap-legend span { font-size: 0.6rem; }
+            .heatmap-dates { font-size: 0.58rem; }
+
+            .mini-stats { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+            .mini-stat { padding: 0.7rem 0.5rem; border-radius: 10px; }
+            .mini-stat .ms-val { font-size: 1rem; }
+            .mini-stat .ms-label { font-size: 0.52rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-satellite-dish"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Visão Geral</div>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="sistemas.html"><i class="fas fa-network-wired"></i><span>Sistemas Ativos</span></a></li>
+            <li class="nav-item">
+                <a href="repos.html">
+                    <i class="fab fa-github"></i>
+                    <span>Repositórios GitHub</span>
+                </a>
+            </li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item">
+                <a href="add.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Adicionar Site</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="metricas.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Métricas de Uptime</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vault.html">
+                    <i class="fas fa-key"></i>
+                    <span>Cofre de Senhas</span>
+                </a>
+            </li>
+
+            <div class="nav-section">Sistema</div>
+            <li class="nav-item">
+                <a href="config.html">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações &amp; APIs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Métricas Consolidadas</h1>
+                <p>Relatório de disponibilidade — últimos 30 dias.</p>
+            </div>
+            <div class="header-actions">
+                <div class="pulse-indicator">
+                    <span style="font-size: 0.75rem; font-weight: 600; color: #fff; text-transform: uppercase;">SLA 30 dias</span>
+                </div>
+                <div id="headerUser" style="margin-left: 1rem;"></div>
+            </div>
+        </header>
+
+        <!-- MINI STATS -->
+        <div class="mini-stats">
+            <div class="mini-stat">
+                <span class="ms-val" style="color: var(--success);">99.98%</span>
+                <span class="ms-label">Uptime Global</span>
+            </div>
+            <div class="mini-stat">
+                <span class="ms-val">2</span>
+                <span class="ms-label">Incidentes</span>
+            </div>
+            <div class="mini-stat">
+                <span class="ms-val" style="color: var(--primary-light);">~12ms</span>
+                <span class="ms-label">Latência Média</span>
+            </div>
+        </div>
+
+        <!-- HERO: DISPONIBILIDADE GERAL -->
+        <div class="metric-block">
+            <div class="hero-avail">
+                <div>
+                    <div class="hero-label">Disponibilidade Geral Média</div>
+                    <div class="hero-number">
+                        99.98%
+                        <i class="fas fa-arrow-trend-up hero-arrow"></i>
+                    </div>
+                </div>
+                <div class="enterprise-tag">
+                    <i class="fas fa-award"></i>
+                    Nível Enterprise
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVIÇOS INDIVIDUAIS -->
+        <div class="metric-block">
+            <div class="metric-block-title"><i class="fas fa-server" style="color: var(--primary-light); margin-right: 6px; font-size: 0.78rem;"></i> Disponibilidade por Serviço</div>
+            
+            <div class="svc-row">
+                <div class="svc-header">
+                    <span class="svc-name">Painel Admin (Letreiro) — Frontend</span>
+                    <span class="svc-pct ok">99.99%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill ok"></div></div>
+            </div>
+
+            <div class="svc-row">
+                <div class="svc-header">
+                    <span class="svc-name">Firebase Storage (Imagens)</span>
+                    <span class="svc-pct warn">98.50%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill warn"></div></div>
+            </div>
+
+            <div class="svc-row">
+                <div class="svc-header">
+                    <span class="svc-name">API Backend — Node.js</span>
+                    <span class="svc-pct ok">100.0%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill ok"></div></div>
+            </div>
+
+            <div class="svc-row">
+                <div class="svc-header">
+                    <span class="svc-name">Portfólio — GitHub Pages</span>
+                    <span class="svc-pct ok">99.95%</span>
+                </div>
+                <div class="bar-track"><div class="bar-fill ok" style="width: 99.5%;"></div></div>
+            </div>
+        </div>
+
+        <!-- HEATMAP TIMELINE -->
+        <div class="metric-block">
+            <div class="metric-block-title"><i class="fas fa-fire" style="color: var(--warning); margin-right: 6px; font-size: 0.78rem;"></i> Micro-Interrupções (Heatmap 30 dias)</div>
+            
+            <div class="heatmap-legend">
+                <div class="legend-dots">
+                    <span class="legend-dot up">Operante</span>
+                    <span class="legend-dot down">Queda</span>
+                </div>
+            </div>
+
+            <div class="timeline" id="timeline"></div>
+
+            <div class="heatmap-dates">
+                <span>30 dias atrás</span>
+                <span>Hoje</span>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const tl = document.getElementById('timeline');
+        for(let i = 0; i < 30; i++) {
+            const chunk = document.createElement('div');
+            chunk.className = 'timeline-chunk';
+            if(i === 12 || i === 25) chunk.classList.add('down');
+            chunk.title = `Dia ${i+1}: ${chunk.classList.contains('down') ? '⚠️ Queda detectada' : '✅ 100% Operante'}`;
+            tl.appendChild(chunk);
+        }
+    </script>
+</body>
+</html>

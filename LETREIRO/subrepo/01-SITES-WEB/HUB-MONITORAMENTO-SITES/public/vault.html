@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aureo Hub | Cofre de Credenciais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ─── VAULT STYLES ─── */
+        .vault-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin-top: 1.5rem; }
+
+        .vault-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        .vault-card:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.04); }
+
+        .vault-card-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 0.8rem; gap: 8px;
+        }
+        .vault-site-name {
+            font-size: 0.9rem; font-weight: 700; color: #fff;
+            display: flex; align-items: center; gap: 8px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;
+        }
+        .vault-site-name i { font-size: 0.72rem; color: var(--primary-light); flex-shrink: 0; }
+        .vault-actions { display: flex; gap: 6px; flex-shrink: 0; }
+        .vault-btn {
+            width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border);
+            background: transparent; color: var(--text-muted); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; transition: 0.2s;
+        }
+        .vault-btn:hover { border-color: var(--primary); color: var(--primary-light); background: rgba(94,106,210,0.1); }
+        .vault-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: rgba(255,77,109,0.1); }
+
+        .vault-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .vault-field {
+            background: rgba(0,0,0,0.25); border-radius: 8px; padding: 8px 10px;
+        }
+        .vault-field-label {
+            font-size: 0.58rem; font-weight: 700; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px;
+        }
+        .vault-field-value {
+            font-size: 0.78rem; color: #e2e8f0; font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 6px; word-break: break-all;
+        }
+        .vault-field-value .copy-btn {
+            background: none; border: none; color: var(--text-muted); cursor: pointer;
+            font-size: 0.62rem; transition: 0.2s; padding: 2px; flex-shrink: 0;
+        }
+        .vault-field-value .copy-btn:hover { color: var(--primary-light); }
+        .vault-field.full { grid-column: span 2; }
+
+        .vault-url {
+            font-size: 0.68rem; color: var(--primary-light); text-decoration: none;
+            display: flex; align-items: center; gap: 4px; margin-top: 6px; opacity: 0.7;
+        }
+        .vault-url:hover { opacity: 1; }
+        .vault-url i { font-size: 0.58rem; }
+
+        .vault-tag {
+            font-size: 0.55rem; font-weight: 700; padding: 2px 7px;
+            border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .vault-tag.admin   { background: rgba(94,106,210,0.15); color: var(--primary-light); border: 1px solid rgba(94,106,210,0.25); }
+        .vault-tag.web     { background: rgba(0,255,149,0.1); color: var(--success); border: 1px solid rgba(0,255,149,0.2); }
+        .vault-tag.api     { background: rgba(255,184,34,0.1); color: var(--warning); border: 1px solid rgba(255,184,34,0.2); }
+        .vault-tag.social  { background: rgba(255,77,109,0.1); color: var(--danger); border: 1px solid rgba(255,77,109,0.2); }
+
+        /* ─── ADD FORM ─── */
+        .vault-add-form {
+            background: rgba(0,0,0,0.25); border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 14px; padding: 1.5rem; margin-top: 1rem;
+            display: none;
+        }
+        .vault-add-form.open { display: block; animation: fadeInUp 0.3s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .vault-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .vault-form-grid .full { grid-column: span 2; }
+        .vault-form-input {
+            width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
+            border-radius: 10px; padding: 10px 12px; color: #fff; font-size: 0.82rem;
+            outline: none; font-family: inherit; transition: 0.2s;
+        }
+        .vault-form-input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(94,106,210,0.15); }
+        .vault-form-input::placeholder { color: rgba(255,255,255,0.2); }
+        select.vault-form-input { cursor: pointer; }
+
+        .vault-form-label {
+            font-size: 0.62rem; font-weight: 700; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; display: block;
+        }
+        .vault-save-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border: none; color: #fff; padding: 11px 20px; border-radius: 10px;
+            font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: inherit;
+            display: flex; align-items: center; gap: 8px; justify-content: center;
+            transition: 0.3s; width: 100%; margin-top: 10px;
+        }
+        .vault-save-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(94,106,210,0.4); }
+
+        /* ─── SECURITY NOTICE ─── */
+        .security-notice {
+            display: flex; align-items: flex-start; gap: 10px;
+            background: rgba(255,184,34,0.06); border: 1px solid rgba(255,184,34,0.15);
+            border-radius: 10px; padding: 10px 14px; margin-bottom: 1rem;
+        }
+        .security-notice i { color: var(--warning); font-size: 0.78rem; margin-top: 2px; flex-shrink: 0; }
+        .security-notice p { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ─── SEARCH ─── */
+        .vault-search {
+            position: relative; margin-bottom: 0.5rem;
+        }
+        .vault-search input {
+            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+            border-radius: 10px; padding: 10px 12px 10px 36px; color: #fff;
+            font-size: 0.82rem; outline: none; font-family: inherit; transition: 0.2s;
+        }
+        .vault-search input:focus { border-color: var(--primary); }
+        .vault-search i {
+            position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+            color: var(--text-muted); font-size: 0.72rem;
+        }
+
+        /* ─── EMPTY STATE ─── */
+        .vault-empty {
+            text-align: center; padding: 3rem 1rem; color: var(--text-muted);
+        }
+        .vault-empty i { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.8rem; display: block; opacity: 0.4; }
+        .vault-empty p { font-size: 0.82rem; }
+
+        /* ─── COUNT ─── */
+        .vault-count {
+            font-size: 0.68rem; font-weight: 700; color: var(--text-muted);
+            padding: 4px 10px; background: rgba(255,255,255,0.04);
+            border-radius: 6px;
+        }
+
+        /* ═══ iPhone 14 Pro Max ═══ */
+        @media (max-width: 430px) {
+            .vault-card { padding: 1rem; border-radius: 12px; }
+            .vault-site-name { font-size: 0.82rem; }
+            .vault-fields { grid-template-columns: 1fr; }
+            .vault-field.full { grid-column: span 1; }
+            .vault-field-value { font-size: 0.72rem; }
+            .vault-field-label { font-size: 0.55rem; }
+            .vault-form-grid { grid-template-columns: 1fr; }
+            .vault-form-grid .full { grid-column: span 1; }
+            .vault-form-input { padding: 9px 10px; font-size: 0.78rem; }
+            .vault-save-btn { font-size: 0.8rem; padding: 10px; }
+            .vault-btn { width: 30px; height: 30px; font-size: 0.62rem; }
+            .security-notice p { font-size: 0.65rem; }
+            .vault-url { font-size: 0.62rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-satellite-dish"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Visão Geral</div>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="sistemas.html"><i class="fas fa-network-wired"></i><span>Sistemas Ativos</span></a></li>
+            <li class="nav-item"><a href="repos.html"><i class="fab fa-github"></i><span>Repositórios GitHub</span></a></li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item"><a href="add.html"><i class="fas fa-plus-circle"></i><span>Adicionar Site</span></a></li>
+            <li class="nav-item"><a href="metricas.html"><i class="fas fa-chart-line"></i><span>Métricas de Uptime</span></a></li>
+            <li class="nav-item active"><a href="vault.html"><i class="fas fa-key"></i><span>Cofre de Senhas</span></a></li>
+
+            <div class="nav-section">Sistema</div>
+            <li class="nav-item"><a href="config.html"><i class="fas fa-cog"></i><span>Configurações &amp; APIs</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Cofre de Credenciais</h1>
+                <p>Logins e senhas de todos os seus serviços — sincronizados com Firebase.</p>
+            </div>
+            <div class="header-actions">
+                <button class="filter-btn active" onclick="toggleAddForm()" id="btnAdd">
+                    <i class="fas fa-plus"></i> Novo
+                </button>
+                <div id="headerUser" style="margin-left: 1rem;"></div>
+            </div>
+        </header>
+
+        <div class="security-notice">
+            <i class="fas fa-shield-halved"></i>
+            <p>Suas credenciais são salvas no <strong>Firebase Firestore</strong> vinculadas à sua conta. 
+            Os dados são protegidos por regras de segurança: somente você pode acessar suas credenciais. 
+            Para máxima segurança, use senhas únicas e ative 2FA sempre que possível.</p>
+        </div>
+
+        <div class="glass-panel">
+
+            <!-- SEARCH + COUNT -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 10px; flex-wrap: wrap;">
+                <div class="vault-search" style="flex: 1; min-width: 180px;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar por nome ou URL..." id="vaultSearch" oninput="filterVault()">
+                </div>
+                <span class="vault-count" id="vaultCount">0 credenciais</span>
+            </div>
+
+            <!-- ADD FORM -->
+            <div class="vault-add-form" id="addForm">
+                <div style="font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-plus-circle" style="color: var(--primary-light); font-size: 0.72rem;"></i> Nova Credencial
+                </div>
+                <div class="vault-form-grid">
+                    <div>
+                        <span class="vault-form-label">Nome do Serviço</span>
+                        <input type="text" class="vault-form-input" id="vf-name" placeholder="Ex: Painel Admin">
+                    </div>
+                    <div>
+                        <span class="vault-form-label">Categoria</span>
+                        <select class="vault-form-input" id="vf-cat">
+                            <option value="admin">Painel Admin</option>
+                            <option value="web">Website</option>
+                            <option value="api">API / Serviço</option>
+                            <option value="social">Rede Social</option>
+                        </select>
+                    </div>
+                    <div class="full">
+                        <span class="vault-form-label">URL de Login</span>
+                        <input type="url" class="vault-form-input" id="vf-url" placeholder="https://...">
+                    </div>
+                    <div>
+                        <span class="vault-form-label">Usuário / E-mail</span>
+                        <input type="text" class="vault-form-input" id="vf-user" placeholder="admin@email.com">
+                    </div>
+                    <div>
+                        <span class="vault-form-label">Senha</span>
+                        <input type="password" class="vault-form-input" id="vf-pass" placeholder="••••••••">
+                    </div>
+                    <div class="full">
+                        <span class="vault-form-label">Notas (opcional)</span>
+                        <input type="text" class="vault-form-input" id="vf-notes" placeholder="Token, observações...">
+                    </div>
+                </div>
+                <button class="vault-save-btn" onclick="saveCredential()">
+                    <i class="fas fa-lock"></i> Salvar no Cofre
+                </button>
+            </div>
+
+            <!-- CREDENTIALS LIST -->
+            <div class="vault-grid" id="vaultGrid">
+                <!-- JS generated -->
+            </div>
+
+            <div class="vault-empty" id="vaultEmpty" style="display:none;">
+                <i class="fas fa-vault"></i>
+                <p>Nenhuma credencial salva ainda.<br>Clique em <strong>"+ Novo"</strong> para adicionar.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // ═══════════════════════════════════════════
+        // VAULT ENGINE — Firebase Firestore
+        // Path: /vaults/{uid}/credentials/{docId}
+        // ═══════════════════════════════════════════
+        const db = firebase.firestore();
+        let vaultCache = [];
+        let vaultUnsubscribe = null;
+
+        // Espera o auth.js definir o usuário para iniciar o listener
+        firebase.auth().onAuthStateChanged(user => {
+            if (!user) return;
+            setupVaultListener(user.uid);
+        });
+
+        function getCredRef(uid) {
+            return db.collection('vaults').doc(uid).collection('credentials');
+        }
+
+        function setupVaultListener(uid) {
+            // Cancela listener anterior se existir
+            if (vaultUnsubscribe) vaultUnsubscribe();
+
+            vaultUnsubscribe = getCredRef(uid)
+                .orderBy('createdAt', 'desc')
+                .onSnapshot(snapshot => {
+                    vaultCache = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    renderVault();
+                }, err => {
+                    console.error('Firestore vault error:', err);
+                });
+        }
+
+        function toggleAddForm() {
+            const form = document.getElementById('addForm');
+            form.classList.toggle('open');
+            const btn = document.getElementById('btnAdd');
+            if (form.classList.contains('open')) {
+                btn.innerHTML = '<i class="fas fa-times"></i> Cancelar';
+            } else {
+                btn.innerHTML = '<i class="fas fa-plus"></i> Novo';
+            }
+        }
+
+        async function saveCredential() {
+            const name  = document.getElementById('vf-name').value.trim();
+            const cat   = document.getElementById('vf-cat').value;
+            const url   = document.getElementById('vf-url').value.trim();
+            const user  = document.getElementById('vf-user').value.trim();
+            const pass  = document.getElementById('vf-pass').value.trim();
+            const notes = document.getElementById('vf-notes').value.trim();
+
+            if (!name || !user || !pass) {
+                alert('⚠️ Preencha ao menos: Nome, Usuário e Senha.');
+                return;
+            }
+
+            const uid = firebase.auth().currentUser?.uid;
+            if (!uid) { alert('Erro: você não está autenticado.'); return; }
+
+            const saveBtn = document.querySelector('.vault-save-btn');
+            saveBtn.innerHTML = '<span class="spinner" style="display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.6s linear infinite;"></span> Salvando...';
+            saveBtn.disabled = true;
+
+            try {
+                await getCredRef(uid).add({
+                    name, cat, url, user, pass, notes,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                // Reset form
+                ['vf-name','vf-url','vf-user','vf-pass','vf-notes'].forEach(id => document.getElementById(id).value = '');
+                toggleAddForm();
+            } catch(err) {
+                console.error(err);
+                alert('❌ Erro ao salvar: ' + err.message);
+            } finally {
+                saveBtn.innerHTML = '<i class="fas fa-lock"></i> Salvar no Cofre';
+                saveBtn.disabled = false;
+            }
+        }
+
+        function deleteCredential(docId) {
+            openDangerConfirm({
+                title: 'Excluir Credencial',
+                message: 'Esta ação removerá permanentemente esta credencial do Firebase.',
+                btnLabel: 'Excluir',
+                onConfirm: async () => {
+                    const uid = firebase.auth().currentUser?.uid;
+                    if (!uid) return;
+                    try {
+                        await getCredRef(uid).doc(docId).delete();
+                    } catch(err) {
+                        alert('❌ Erro ao excluir: ' + err.message);
+                    }
+                }
+            });
+        }
+
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check" style="color:var(--success);"></i>';
+                setTimeout(() => btn.innerHTML = orig, 1200);
+            });
+        }
+
+        function togglePassword(id) {
+            const el = document.getElementById('pwd-' + id);
+            const btn = document.getElementById('eye-' + id);
+            if (el.dataset.hidden === '1') {
+                el.textContent = el.dataset.real;
+                el.dataset.hidden = '0';
+                btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                el.textContent = '••••••••';
+                el.dataset.hidden = '1';
+                btn.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        }
+
+        function getCatTag(cat) {
+            const labels = { admin: 'Admin', web: 'Web', api: 'API', social: 'Social' };
+            return `<span class="vault-tag ${cat}">${labels[cat] || cat}</span>`;
+        }
+
+        function escapeAttr(str) {
+            return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;');
+        }
+
+        function renderVault(filter) {
+            if (filter === undefined) filter = (document.getElementById('vaultSearch')?.value || '').toLowerCase();
+            const grid = document.getElementById('vaultGrid');
+            const empty = document.getElementById('vaultEmpty');
+            const count = document.getElementById('vaultCount');
+            const all = vaultCache;
+            const filtered = filter
+                ? all.filter(c => c.name.toLowerCase().includes(filter) || (c.url || '').toLowerCase().includes(filter))
+                : all;
+
+            count.textContent = `${all.length} credencia${all.length !== 1 ? 'is' : 'l'}`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                empty.style.display = all.length === 0 ? 'block' : 'none';
+                if (filter && all.length > 0) {
+                    grid.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--text-muted);font-size:0.82rem;"><i class="fas fa-search" style="margin-right:6px;"></i>Nenhum resultado para "' + filter + '"</div>';
+                }
+                return;
+            }
+            empty.style.display = 'none';
+
+            grid.innerHTML = filtered.map(c => {
+                const safeUser = escapeAttr(c.user);
+                const safePass = escapeAttr(c.pass);
+                const safeName = escapeAttr(c.name);
+                const safeNotes = escapeAttr(c.notes || '');
+                return `
+                <div class="vault-card">
+                    <div class="vault-card-header">
+                        <div class="vault-site-name">
+                            <i class="fas fa-globe"></i>
+                            <span>${safeName}</span>
+                            ${getCatTag(c.cat)}
+                        </div>
+                        <div class="vault-actions">
+                            <button class="vault-btn" onclick="togglePassword('${c.id}')" id="eye-${c.id}" title="Mostrar/Ocultar Senha">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="vault-btn danger" onclick="deleteCredential('${c.id}')" title="Excluir">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="vault-fields">
+                        <div class="vault-field">
+                            <div class="vault-field-label">Usuário / E-mail</div>
+                            <div class="vault-field-value">
+                                <span>${safeUser}</span>
+                                <button class="copy-btn" onclick="copyToClipboard('${c.user.replace(/'/g,"\\'")}', this)" title="Copiar">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="vault-field">
+                            <div class="vault-field-label">Senha</div>
+                            <div class="vault-field-value">
+                                <span id="pwd-${c.id}" data-hidden="1" data-real="${safePass}">••••••••</span>
+                                <button class="copy-btn" onclick="copyToClipboard('${c.pass.replace(/'/g,"\\'")}', this)" title="Copiar">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        ${c.notes ? `<div class="vault-field full">
+                            <div class="vault-field-label">Notas</div>
+                            <div class="vault-field-value"><span>${safeNotes}</span></div>
+                        </div>` : ''}
+                    </div>
+                    ${c.url ? `<a href="${escapeAttr(c.url)}" target="_blank" class="vault-url">
+                        <i class="fas fa-external-link-alt"></i> ${escapeAttr(c.url)}
+                    </a>` : ''}
+                </div>
+            `}).join('');
+        }
+
+        function filterVault() {
+            const q = document.getElementById('vaultSearch').value.toLowerCase();
+            renderVault(q);
+        }
+    </script>
+</body>
+</html>

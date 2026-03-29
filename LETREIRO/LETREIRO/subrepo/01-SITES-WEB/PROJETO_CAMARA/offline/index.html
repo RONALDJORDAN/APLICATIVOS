@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSTechWeb - Sistema Online do Plenário</title>
+    <meta name="description" content="Sistema de gestão do plenário da Câmara de São Miguel dos Campos - AL. 100% Offline.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img src="../Images/Logo.png" alt="Logo" onerror="this.style.display='none'">
+            <h2>NSTechWeb</h2>
+            <small>Câmara de São Miguel dos Campos - AL</small>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Principal</div>
+                <a class="nav-item active" data-page="dashboard" href="#dashboard" onclick="toggleSidebar()">
+                    <span class="icon">📊</span> Painel de Controle
+                </a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Cadastros</div>
+                <a class="nav-item" data-page="vereadores" href="#vereadores" onclick="toggleSidebar()">
+                    <span class="icon">👥</span> Vereadores
+                </a>
+                <a class="nav-item" data-page="materias" href="#materias" onclick="toggleSidebar()">
+                    <span class="icon">📋</span> Matérias
+                </a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Movimentação</div>
+                <a class="nav-item" data-page="pautas" href="#pautas" onclick="toggleSidebar()">
+                    <span class="icon">📅</span> Sessões e Pautas
+                </a>
+                <a class="nav-item" data-page="votacao" href="#votacao" onclick="toggleSidebar()">
+                    <span class="icon">🗳️</span> Processo de Votação
+                </a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Consultas</div>
+                <a class="nav-item" data-page="consulta" href="#consulta" onclick="toggleSidebar()">
+                    <span class="icon">🔍</span> Consulta de Matérias
+                </a>
+                <a class="nav-item" data-page="relatorios" href="#relatorios" onclick="toggleSidebar()">
+                    <span class="icon">📊</span> Relatórios
+                </a>
+            </div>
+            <div class="nav-section">
+                <div class="nav-section-title">Sistema</div>
+                <a class="nav-item" data-page="config" href="#config" onclick="toggleSidebar()">
+                    <span class="icon">⚙️</span> Configurações
+                </a>
+            </div>
+        </nav>
+        <div class="sidebar-footer">NSTechWeb Offline v2.0<br>&copy; 2025</div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-content">
+        <header class="topbar">
+            <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+            <span class="topbar-title">Sistema Online do Plenário</span>
+            <div class="topbar-actions">
+                <span style="font-size:0.8rem;color:var(--text2)">100% Offline</span>
+                <span style="font-size:0.8rem;color:var(--accent);font-weight:700">● Online</span>
+            </div>
+        </header>
+        <div id="view"></div>
+    </div>
+</div>
+
+<!-- Modal injection area -->
+<div id="modalArea"></div>
+<!-- Toast notifications -->
+<div class="toast-container" id="toasts"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

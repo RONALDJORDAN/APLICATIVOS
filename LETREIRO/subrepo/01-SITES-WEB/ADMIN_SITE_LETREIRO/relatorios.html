@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios | Letreiro Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0084ff">
+</head>
+<body data-page="reports">
+    
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-key"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">STUDIO</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-key"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">STUDIO</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Principal</div>
+            <li class="nav-item">
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item">
+                <a href="licencas.html">
+                    <i class="fas fa-key"></i>
+                    <span>Licenças</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="pagamentos.html">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Pagamentos</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a href="relatorios.html">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Relatórios</span>
+                </a>
+            </li>
+
+            <div class="nav-section">Sistema</div>
+        <li class="nav-item">
+          <a href="atualizacoes.html">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Atualizações (App)</span>
+          </a>
+        </li>
+      </ul>
+
+        <div class="nav-item" id="logoutBtn" style="color: var(--danger); margin-bottom: 0;">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Sair do Painel</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section id="tab-reports">
+            <header class="page-header">
+                <div class="header-title">
+                    <h1>Exportação de Relatórios</h1>
+                    <p>Gere e baixe documentos de licenciamento</p>
+                </div>
+            </header>
+
+            <div class="glass-panel" style="max-width: 500px; padding: 2.5rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">Exportação de Dados</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6; font-size: 0.9rem;">Selecione o formato desejado para baixar a base completa de licenças, incluindo dados de hardware e proprietários vinculados.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <button onclick="exportToCSV()" class="btn-premium btn-secondary" style="justify-content: center; height: 50px; font-size: 0.8rem;">
+                        <i class="fas fa-file-csv"></i> Planilha CSV
+                    </button>
+                    <button onclick="window.print()" class="btn-premium btn-secondary" style="justify-content: center; height: 50px; font-size: 0.8rem;">
+                        <i class="fas fa-print"></i> Imprimir PDF
+                    </button>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.25rem; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border);">
+                    <div style="display: flex; align-items: center; gap: 10px; color: var(--warning);">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <span style="font-size: 0.8rem; font-weight: 600;">Nota de Segurança</span>
+                    </div>
+                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Os relatórios contêm informações sensíveis de hardware. Mantenha estes arquivos em local seguro.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast">
+        <i class="fas fa-info-circle"></i>
+        <span>Ação realizada com sucesso!</span>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

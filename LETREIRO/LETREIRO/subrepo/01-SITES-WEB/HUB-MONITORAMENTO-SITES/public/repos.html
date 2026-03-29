@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aureo Hub | Repositórios do GitHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* TABS */
+        .repo-tab { background: transparent; border: none; color: var(--text-muted); padding: 10px 18px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border-bottom: 3px solid transparent; transition: var(--transition); margin-bottom: -1px; font-family: inherit; }
+        .repo-tab:hover { color: #fff; }
+        .repo-tab.active { color: var(--primary-light); border-bottom-color: var(--primary-light); }
+        .repo-tab-content { animation: fadeInUp 0.3s ease; }
+
+        /* FILE EXPLORER */
+        .file-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid rgba(255,255,255,0.02); transition: var(--transition); }
+        .file-item:hover { background: rgba(255,255,255,0.05); }
+        .file-item:last-child { border-bottom: none; }
+        .file-name { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; color: #e2e8f0; font-family: 'JetBrains Mono', monospace; }
+        .file-type-icon { font-size: 0.7rem; width: 20px; text-align: center; } /* -30% */
+        .file-icon-dir { color: #facc15; }
+        .file-icon-code { color: var(--primary-light); }
+        .file-icon-image { color: #00ff95; }
+        .file-icon-doc { color: #9da4bf; }
+        .file-meta { font-size: 0.72rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+
+        /* ACTIONS GRID */
+        .action-btn-repo { background: rgba(255,255,255,0.02); border: 1px solid; border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 5px; cursor: pointer; transition: var(--transition); font-family: inherit; }
+        .action-btn-repo:hover { background: rgba(255,255,255,0.07); transform: translateY(-3px); }
+        .action-btn-repo strong { font-size: 0.95rem; display: block; }
+        .action-btn-repo span { font-size: 0.75rem; color: var(--text-muted); display: block; }
+        .action-btn-repo i.fa-2x { font-size: 1.4em !important; } /* -30% */
+
+        /* FORM INPUTS NO MODAL */
+        .form-input-r { background: rgba(0,0,0,0.4); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; color: #fff; font-size: 0.9rem; outline: none; font-family: inherit; width: 100%; transition: var(--transition); resize: vertical; }
+        .form-input-r:focus { border-color: var(--primary); box-shadow: 0 0 12px rgba(94,106,210,0.2); }
+
+        /* SCROLLBAR */
+        #repoFileList::-webkit-scrollbar { width: 6px; }
+        #repoFileList::-webkit-scrollbar-track { background: transparent; }
+        #repoFileList::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+        /* BACK BUTTON */
+        .back-btn { background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 4px 12px; border-radius: 8px; font-size: 0.78rem; cursor: pointer; font-family: inherit; margin-bottom: 10px; transition: var(--transition); }
+        .back-btn:hover { border-color: var(--primary); color: var(--primary-light); }
+
+        /* ─── iPhone 14 Pro Max ─── */
+        @media (max-width: 430px) {
+            /* Panel controls */
+            .panel-controls > div:first-child h3 { font-size: 0.95rem !important; }
+            .panel-controls > div:first-child p { font-size: 0.72rem !important; }
+            .filter-group { flex-wrap: wrap !important; }
+            #authStatusIndicator { font-size: 0.68rem !important; padding: 4px 10px !important; }
+
+            /* Repo cards */
+            .repo-card { min-height: unset !important; }
+
+            /* Modal */
+            .modal-content { max-width: 100% !important; border-radius: 20px 20px 0 0 !important; padding: 1.2rem !important; }
+            .modal { align-items: flex-end !important; padding: 0 !important; }
+            #modalRepoName { font-size: 1.1rem !important; flex-wrap: wrap; }
+            #modalRepoName .fab { font-size: 0.9rem !important; }
+
+            /* Tabs */
+            .repo-tab { padding: 8px 10px; font-size: 0.75rem; }
+            .repo-tab i { font-size: 0.7rem; }
+
+            /* File explorer */
+            .file-item { padding: 8px 12px; }
+            .file-name { font-size: 0.78rem; gap: 8px; }
+            .file-meta { font-size: 0.65rem; }
+            #repoFileList { max-height: 300px !important; }
+            #explorerBreadcrumb { padding: 8px 12px; font-size: 0.72rem; }
+
+            /* Actions grid */
+            #tab-actions > div { grid-template-columns: 1fr !important; gap: 0.8rem; }
+            .action-btn-repo { padding: 1rem; border-radius: 12px; }
+            .action-btn-repo strong { font-size: 0.85rem; }
+            .action-btn-repo span { font-size: 0.68rem; }
+            .action-btn-repo i.fa-2x { font-size: 1.1em !important; margin-bottom: 6px !important; }
+            button[onclick="deleteRepo()"] { grid-column: span 1 !important; }
+
+            /* Edit tab */
+            .form-input-r { padding: 10px 12px; font-size: 0.82rem; }
+            #tab-edit > div { padding: 1rem !important; }
+            #tab-edit button { font-size: 0.82rem !important; padding: 10px 16px !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-satellite-dish"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Visão Geral</div>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="sistemas.html"><i class="fas fa-network-wired"></i><span>Sistemas Ativos</span></a></li>
+            <li class="nav-item active"><a href="repos.html"><i class="fab fa-github"></i><span>Repositórios GitHub</span></a></li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item"><a href="add.html"><i class="fas fa-plus-circle"></i><span>Adicionar Site</span></a></li>
+            <li class="nav-item"><a href="metricas.html"><i class="fas fa-chart-line"></i><span>Métricas de Uptime</span></a></li>
+            <li class="nav-item"><a href="vault.html"><i class="fas fa-key"></i><span>Cofre de Senhas</span></a></li>
+
+            <div class="nav-section">Sistema</div>
+            <li class="nav-item">
+                <a href="config.html">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações &amp; APIs</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-item" id="refreshBtn" style="color: var(--primary-light); margin-bottom: 0;">
+            <i class="fas fa-sync-alt"></i>
+            <span>Forçar Ping</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Painel do GitHub</h1>
+                <p>Repositórios Autênticos integrados diretamente via API.</p>
+            </div>
+            <div class="header-actions">
+                <div class="pulse-indicator">
+                    <div class="blob lime"></div>
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--success); text-transform: uppercase;">Monitoramento Ativo</span>
+                </div>
+                <div id="headerUser" style="margin-left: 1rem;"></div>
+            </div>
+        </header>
+
+        <!-- SEÇÃO DE REPOSITÓRIOS GITHUB -->
+        <div class="glass-panel">
+            <div class="panel-controls" style="flex-wrap: wrap; gap: 15px;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h3><i class="fab fa-github" style="margin-right: 8px;"></i> Projetos e Códigos Fontes</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">
+                        Autenticado para ler repositórios Públicos e <i class="fas fa-lock" style="font-size:0.7rem;"></i> Privados
+                    </p>
+                </div>
+                
+                <div class="filter-group" style="background: transparent; border: none; align-items: center; gap: 10px;">
+                    <span id="authStatusIndicator" style="font-size: 0.75rem; font-weight: 700; color: var(--warning); padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,202,40,0.3); background: rgba(255,202,40,0.1);">
+                         Somente Públicos
+                    </span>
+                    <span id="repoTotalCount" style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); padding: 6px 14px;"></span>
+                    <button onclick="location.href='config.html'" class="filter-btn" style="border-radius: 8px; font-size: 0.8rem; padding: 6px 12px; background: rgba(255,255,255,0.05);">
+                        <i class="fas fa-key"></i> Autenticar (Privados)
+                    </button>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); padding: 6px 14px;"><i class="fas fa-sync-alt fa-spin" style="margin-right: 4px; font-size: 0.65rem;"></i> Sync Live</span>
+                </div>
+            </div>
+
+            <div class="grid-container" id="reposGrid">
+                <!-- Cards de Repositórios Gerados via JS -->
+            </div>
+            
+            <div id="loadingRepos" style="text-align: center; padding: 4rem; color: var(--text-muted);">
+                <i class="fab fa-github fa-bounce fa-2x" style="color: #fff; margin-bottom: 0.8rem;"></i>
+                <p style="font-size: 0.85rem; font-weight: 500;">Conectando com a API do GitHub...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal de Gerenciamento de Repositórios -->
+    <div id="repoModal" class="modal">
+        <div class="modal-content" style="max-width: 860px;">
+
+            <!-- HEADER -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 id="modalRepoName" style="font-size: 1.4rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-github"></i>
+                    <span id="repoNameText">Nome do Repo</span>
+                    <span id="repoPrivateBadge" style="display:none; font-size: 0.65rem; background: rgba(255,202,40,0.15); color: var(--warning); border: 1px solid rgba(255,202,40,0.3); padding: 2px 8px; border-radius: 20px; font-weight: 700;">PRIVADO</span>
+                </h2>
+                <button onclick="closeModal('repoModal')" class="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+            <p id="repoDescText" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;"></p>
+
+            <!-- TABS -->
+            <div style="display: flex; gap: 6px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0; flex-wrap: wrap;">
+                <button class="repo-tab active" onclick="switchRepoTab('files', this)"><i class="fas fa-folder-open"></i> Explorador</button>
+                <button class="repo-tab" onclick="switchRepoTab('edit', this)"><i class="fas fa-pen"></i> Editar Repo</button>
+                <button class="repo-tab" onclick="switchRepoTab('actions', this)"><i class="fas fa-bolt"></i> Ações Rápidas</button>
+            </div>
+
+            <!-- TAB: EXPLORADOR -->
+            <div id="tab-files" class="repo-tab-content">
+                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+                    <div id="explorerBreadcrumb" style="background: rgba(255,255,255,0.03); padding: 10px 20px; border-bottom: 1px solid var(--border); font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display:flex; justify-content: space-between; align-items: center;">
+                        <span id="currentPathLabel">/ raiz</span>
+                        <span id="repoFilesCount" style="font-size:0.75rem;"></span>
+                    </div>
+                    <div id="repoFileList" style="max-height: 380px; overflow-y: auto; padding: 8px 0;">
+                        <div style="text-align: center; padding: 2rem; color:var(--text-muted);">
+                            <i class="fas fa-circle-notch fa-spin" style="color: var(--primary);"></i> Carregando...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: EDITAR -->
+            <div id="tab-edit" class="repo-tab-content" style="display:none;">
+                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Nome do Repositório</label>
+                        <input type="text" id="editRepoName" class="form-input-r" placeholder="Novo nome...">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem; display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Descrição</label>
+                        <textarea id="editRepoDesc" class="form-input-r" rows="3" placeholder="Descrição do projeto..."></textarea>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 2rem; display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Visibilidade</label>
+                        <select id="editRepoPrivate" class="form-input-r">
+                            <option value="false">🌐 Público</option>
+                            <option value="true">🔒 Privado</option>
+                        </select>
+                    </div>
+                    <button onclick="saveRepoEdit()" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); border:none; color:#fff; padding: 12px 24px; border-radius: 12px; font-weight:700; cursor:pointer; font-size:0.9rem; font-family: inherit; width: 100%;">
+                        <i class="fas fa-save"></i> Salvar Alterações via API
+                    </button>
+                    <p style="font-size:0.75rem; color:var(--text-muted); margin-top: 1rem;"><i class="fas fa-info-circle"></i> Requer token com permissão de escrita (escopo <code>repo</code>).</p>
+                </div>
+            </div>
+
+            <!-- TAB: AÇÕES RÁPIDAS -->
+            <div id="tab-actions" class="repo-tab-content" style="display:none;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+
+                    <button onclick="downloadRepo()" class="action-btn-repo" style="border-color: rgba(94,106,210,0.4); color: var(--primary-light);">
+                        <i class="fas fa-download fa-2x" style="margin-bottom: 10px;"></i>
+                        <strong>Download ZIP</strong>
+                        <span>Baixar todo o código como arquivo .zip</span>
+                    </button>
+
+                    <button onclick="shareRepo()" class="action-btn-repo" style="border-color: rgba(0,255,149,0.3); color: var(--success);">
+                        <i class="fas fa-share-nodes fa-2x" style="margin-bottom: 10px;"></i>
+                        <strong>Copiar Link</strong>
+                        <span>Copiar URL do repositório para área de transferência</span>
+                    </button>
+
+                    <button onclick="openInGithub()" class="action-btn-repo" style="border-color: rgba(255,255,255,0.15); color: #fff;">
+                        <i class="fab fa-github fa-2x" style="margin-bottom: 10px;"></i>
+                        <strong>Abrir no GitHub</strong>
+                        <span>Acessar o repositório direto no GitHub.com</span>
+                    </button>
+
+                    <button onclick="cloneRepo()" class="action-btn-repo" style="border-color: rgba(255,202,40,0.3); color: var(--warning);">
+                        <i class="fas fa-code-branch fa-2x" style="margin-bottom: 10px;"></i>
+                        <strong>Copiar Clone URL</strong>
+                        <span>Copiar o comando git clone para terminal</span>
+                    </button>
+
+                    <button onclick="deleteRepo()" class="action-btn-repo" style="border-color: rgba(255,77,109,0.3); color:var(--danger); grid-column: span 2;">
+                        <i class="fas fa-trash-alt fa-2x" style="margin-bottom: 10px;"></i>
+                        <strong>Excluir Repositório</strong>
+                        <span>⚠️ Ação irreversível. Remove permanentemente o repositório do GitHub.</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

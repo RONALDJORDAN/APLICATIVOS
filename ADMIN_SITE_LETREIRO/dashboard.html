@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Letreiro Digital</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0084ff">
+  </head>
+  <body data-page="dashboard">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <div class="logo-icon-sm"><i class="fas fa-key"></i></div>
+      <span style="font-weight: 800; font-size: 0.9rem"
+        >AUREO <span style="color: var(--primary)">STUDIO</span></span
+      >
+      <button id="mobileMenuBtn" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+      <div class="logo-container">
+        <div class="logo-icon"><i class="fas fa-key"></i></div>
+        <span
+          style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px"
+          >AUREO <span style="color: var(--primary)">STUDIO</span></span
+        >
+      </div>
+
+      <ul class="nav-links">
+        <div class="nav-section">Principal</div>
+        <li class="nav-item active">
+          <a href="dashboard.html">
+            <i class="fas fa-chart-pie"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <div class="nav-section">Gestão</div>
+        <li class="nav-item">
+          <a href="licencas.html">
+            <i class="fas fa-key"></i>
+            <span>Licenças</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="pagamentos.html">
+            <i class="fas fa-credit-card"></i>
+            <span>Pagamentos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="relatorios.html">
+            <i class="fas fa-file-invoice"></i>
+            <span>Relatórios</span>
+          </a>
+        </li>
+
+        <div class="nav-section">Sistema</div>
+        <li class="nav-item">
+          <a href="atualizacoes.html">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <span>Atualizações (App)</span>
+          </a>
+        </li>
+      </ul>
+
+      <div
+        class="nav-item"
+        id="logoutBtn"
+        style="color: var(--danger); margin-bottom: 0"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Sair do Painel</span>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section id="tab-dashboard">
+        <header class="page-header">
+          <div class="header-title">
+            <h1>Visão Geral</h1>
+            <p>Status atual do sistema de licenciamento</p>
+          </div>
+          <button
+            id="addLicenseBtn"
+            class="btn-premium btn-add"
+            title="Criar nova chave de acesso"
+          >
+            <i class="fas fa-plus"></i> Gerar Nova Licença
+          </button>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <span class="label">Total Emitido</span>
+              <span id="stat-total" class="value">0</span>
+              <span class="trend"
+                ><i
+                  class="fas fa-circle-check"
+                  style="color: var(--primary)"
+                ></i>
+                Sistema Online</span
+              >
+            </div>
+            <i class="fas fa-key stat-icon"></i>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <span class="label">Ativas</span>
+              <span id="stat-active" class="value" style="color: var(--success)"
+                >0</span
+              >
+              <span class="trend">Dispositivos Vinculados</span>
+            </div>
+            <i class="fas fa-desktop stat-icon"></i>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-content">
+              <span class="label">Expiradas</span>
+              <span id="mgmt-stat-expired" class="value" style="color: var(--danger)"
+                >0</span
+              >
+              <span class="trend">Licenças vencidas</span>
+            </div>
+            <i class="fas fa-times-circle stat-icon"></i>
+          </div>
+        </div>
+
+        <div class="glass-panel">
+          <div class="panel-controls">
+            <h3>Ativações Recentes</h3>
+            <div class="search-wrapper">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Pesquisar por chave ou dispositivo..."
+              />
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Chave de Ativação</th>
+                  <th>Status</th>
+                  <th>Validade</th>
+                  <th>Dispositivo</th>
+                  <th>Data Ativação</th>
+                  <th style="text-align: right">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- JS Rows -->
+              </tbody>
+            </table>
+            <div
+              id="loading"
+              style="
+                text-align: center;
+                padding: 2rem;
+                color: var(--text-muted);
+              "
+            >
+              <i
+                class="fas fa-spinner fa-spin fa-2x"
+                style="color: var(--primary); margin-bottom: 0.8rem"
+              ></i>
+              <p style="font-size: 0.85rem; font-weight: 500">
+                Carregando dados do servidor...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="detailsModal" class="modal">
+      <div class="modal-content">
+        <h2 id="modalKeyTitle" style="margin-bottom: 0.3rem; font-size: 1.4rem;">Chave: XXXX</h2>
+        <p id="modalStatusBadge" style="margin-bottom: 1rem"></p>
+
+        <div id="expirationDetails" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+            <h4 style="color: var(--primary); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 0.8rem;">Validade da Licença</h4>
+            <div class="device-detail">
+                <div class="detail-item">
+                    <span class="label">Data de Início</span>
+                    <span id="detail-inicio" class="value">N/A</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Data de Expiração</span>
+                    <span id="detail-expiracao" class="value">N/A</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="deviceDetails" class="hidden">
+          <h4
+            style="
+              color: var(--primary);
+              text-transform: uppercase;
+              font-size: 0.75rem;
+              letter-spacing: 1px;
+              margin-bottom: 0.8rem;
+            "
+          >
+            Dados do Proprietário
+          </h4>
+          <div class="device-detail" style="margin-bottom: 1rem">
+            <div class="detail-item" style="grid-column: span 2">
+              <span class="label">Nome Completo</span>
+              <span id="detail-owner" class="value">N/A</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">CPF / RG</span>
+              <span id="detail-doc" class="value">N/A</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Termos LGPD</span>
+              <span id="detail-lgpd" class="value" style="color: var(--success)"
+                ><i class="fas fa-check-shield"></i> Aceito</span
+              >
+            </div>
+          </div>
+
+          <h4
+            style="
+              color: var(--primary);
+              text-transform: uppercase;
+              font-size: 0.8rem;
+              letter-spacing: 1px;
+              margin-bottom: 1rem;
+            "
+          >
+            Informações do Aparelho
+          </h4>
+          <div class="device-detail">
+            <div class="detail-item">
+              <span class="label">Nome da Máquina</span>
+              <span id="detail-name" class="value">N/A</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Sistema Operacional</span>
+              <span id="detail-os" class="value">N/A</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">Usuário Host</span>
+              <span id="detail-user" class="value">N/A</span>
+            </div>
+            <div class="detail-item">
+              <span class="label">ID de Hardware (HWID)</span>
+              <span
+                id="detail-hwid"
+                class="value text-mono"
+                style="font-size: 0.75rem; word-break: break-all"
+                >N/A</span
+              >
+            </div>
+            <div class="detail-item" style="grid-column: span 2">
+              <span class="label">Data de Ativação</span>
+              <span id="detail-date" class="value">N/A</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="noDeviceMessage"
+          style="padding: 1.5rem; text-align: center; color: #555"
+        >
+          <i class="fas fa-info-circle"></i> Esta chave ainda não foi utilizada
+          em nenhum dispositivo.
+        </div>
+
+        <div
+          style="
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+          "
+        >
+          <button
+            onclick="closeModal('detailsModal')"
+            class="btn-premium"
+            style="background: #222; color: #888"
+          >
+            Fechar
+          </button>
+          <button
+            id="modalResetBtn"
+            class="btn-premium"
+            style="background: var(--warning); color: #000"
+          >
+            <i class="fas fa-undo"></i> Resetar HWID
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="newLicenseModal" class="modal">
+      <div class="modal-content">
+        <h2 style="margin-bottom: 2rem">Gerar Nova Licença</h2>
+        <div class="form-group">
+          <label>Chave Personalizada (Opcional)</label>
+          <div style="display: flex; gap: 10px">
+            <input type="text" id="newKeyInput" class="form-control" placeholder="Ex: CLI-2024-XP" />
+            <button
+              id="generateRandomBtn"
+              class="btn-premium"
+              style="background: rgba(255,255,255,0.05); color: #fff; padding: 0 20px; border: 1px solid var(--border);"
+            >
+              <i class="fas fa-dice"></i>
+            </button>
+          </div>
+          <small style="color: var(--text-muted); display: block; margin-top: 8px; font-size: 0.75rem;">Deixe em branco para gerar um ID único automático.</small>
+        </div>
+
+        <div class="form-group">
+            <label>Data de Início da Licença</label>
+            <input type="date" id="newDataInicio" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Data de Expiração da Licença</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+                <button type="button" class="btn-preset" onclick="setPresetDate('newDataExpiracao', 30)">+30 dias</button>
+                <button type="button" class="btn-preset" onclick="setPresetDate('newDataExpiracao', 90)">+90 dias</button>
+                <button type="button" class="btn-preset" onclick="setPresetDate('newDataExpiracao', 365)">+1 ano</button>
+                <button type="button" class="btn-preset" onclick="setPresetDate('newDataExpiracao', 0)">Vitalícia</button>
+            </div>
+            <input type="date" id="newDataExpiracao" class="form-control">
+        </div>
+
+        <div
+          style="
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+          "
+        >
+          <button
+            id="cancelBtn"
+            class="btn-premium"
+            style="background: #222; color: #888"
+          >
+            Cancelar
+          </button>
+          <button id="saveBtn" class="btn-premium btn-add">
+            Criar Licença
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="validityModal" class="modal">
+        <div class="modal-content" style="max-width: 450px;">
+            <h2 id="validityModalTitle" style="margin-bottom: 0.5rem;">Gerenciar Validade</h2>
+            <p id="validityKeyRef" style="color: var(--primary); font-family: monospace; margin-bottom: 2rem;">CHAVE-XXXX</p>
+            
+            <div class="form-group">
+                <label>Data de Início</label>
+                <input type="date" id="editValidInicio" class="form-control" style="margin-bottom: 20px;">
+                
+                <label>Data de Expiração</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+                    <button type="button" class="btn-preset" onclick="setPresetDate('editValidExp', 30)">+30 dias</button>
+                    <button type="button" class="btn-preset" onclick="setPresetDate('editValidExp', 90)">+90 dias</button>
+                    <button type="button" class="btn-preset" onclick="setPresetDate('editValidExp', 365)">+1 ano</button>
+                    <button type="button" class="btn-preset" onclick="setPresetDate('editValidExp', 0)">Vitalícia</button>
+                </div>
+                <input type="date" id="editValidExp" class="form-control">
+            </div>
+
+            <div style="margin-top: 2.5rem; display: flex; justify-content: flex-end; gap: 12px;">
+                <button onclick="closeModal('validityModal')" class="btn-premium" style="background: #222; color: #888;">Cancelar</button>
+                <button id="saveValidityFinalBtn" class="btn-premium btn-add">Salvar Validade</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+      <i class="fas fa-info-circle"></i>
+      <span>Ação realizada com sucesso!</span>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

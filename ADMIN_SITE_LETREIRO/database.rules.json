@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "licencas": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$chave": {
+        ".read": "data.exists()",
+        ".write": "auth != null || !data.child('hwid_vinculado').exists() || data.child('hwid_vinculado').val() == '' || data.child('hwid_vinculado').val() == newData.child('hwid_vinculado').val()"
+      }
+    },
+    "app_update": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "app_update_history": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}

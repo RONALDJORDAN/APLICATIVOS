@@ -1,0 +1,46 @@
+{
+    "current_mode": "PROJECTION",
+    "mode_configs": {
+        "PROJECTION": {
+            "show_clock": false,
+            "show_timer": false,
+            "show_banner": false,
+            "show_schedule": false,
+            "clock_size": 30.0,
+            "clock_scale": 1.0,
+            "banner_height": 80,
+            "schedule_size": 12.0,
+            "schedule_width": 300,
+            "text_mode": "full",
+            "bg_color": "#CC0000"
+        },
+        "STREAMING": {
+            "show_clock": false,
+            "show_timer": false,
+            "show_banner": false,
+            "show_schedule": false,
+            "clock_size": 30.0,
+            "clock_scale": 1.0,
+            "banner_height": 60,
+            "schedule_size": 12.0,
+            "schedule_width": 300,
+            "text_mode": "full",
+            "bg_color": "#00B140"
+        },
+        "TV_MODE": {
+            "show_clock": false,
+            "show_timer": false,
+            "show_banner": false,
+            "show_schedule": false,
+            "clock_size": 30.0,
+            "clock_scale": 1.0,
+            "banner_height": 90,
+            "schedule_size": 12.0,
+            "schedule_width": 300,
+            "text_mode": "simple",
+            "bg_color": "#002366",
+            "tv_headline_size": 22,
+            "tv_ticker_size": 14
+        }
+    }
+}

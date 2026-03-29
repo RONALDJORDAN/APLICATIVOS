@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aureo Hub | Configurações do Sistema</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-container { width: 100%; max-width: 800px; }
+        .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .form-input { 
+            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; 
+            color: #fff; font-size: 0.95rem; transition: var(--transition); outline: none; font-family: inherit; width: 100%;
+        }
+        .form-input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(94, 106, 210, 0.2); background: rgba(0,0,0,0.6); }
+        .form-btn { 
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)); border: none; padding: 14px 24px; border-radius: 12px;
+            color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            font-family: inherit;
+        }
+        .form-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(94, 106, 210, 0.4); }
+        .form-btn.danger { background: rgba(255, 77, 109, 0.1); border: 1px solid rgba(255, 77, 109, 0.3); color: var(--danger); }
+        .form-btn.danger:hover { background: rgba(255, 77, 109, 0.2); box-shadow: 0 10px 20px rgba(255, 77, 109, 0.2); }
+        
+        .config-section { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+        .config-header { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
+        .config-header i { font-size: 0.95rem; } /* -30% */
+
+        .token-row { display: flex; gap: 10px; }
+        .token-row .form-input { flex: 1; }
+        .token-eye-btn { padding: 14px; background: rgba(255,255,255,0.05); min-width: 48px; }
+
+        .actions-row {
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 1rem;
+            gap: 12px; flex-wrap: wrap;
+        }
+
+        @media (max-width: 430px) {
+            .form-container { max-width: 100%; }
+            .config-section { padding: 1.2rem; border-radius: 12px; margin-bottom: 1.2rem; }
+            .config-header { font-size: 1rem; gap: 8px; margin-bottom: 1rem; padding-bottom: 0.8rem; }
+            .config-header i { font-size: 0.82rem; }
+            .form-group label { font-size: 0.7rem; }
+            .form-input { padding: 12px 14px; font-size: 0.88rem; }
+            .form-btn { padding: 12px 16px; font-size: 0.88rem; }
+            .form-btn i { font-size: 0.78rem; }
+            .token-row { flex-direction: column; }
+            .token-eye-btn { width: 100%; }
+            .actions-row { flex-direction: column; }
+            .actions-row .form-btn { width: 100%; justify-content: center; }
+            .config-section p { font-size: 0.78rem !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="logo-icon-sm"><i class="fas fa-satellite-dish"></i></div>
+        <span style="font-weight: 800; font-size: 0.9rem;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        <button id="mobileMenuBtn" class="menu-toggle"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-satellite-dish"></i></div>
+            <span style="font-weight: 800; font-size: 1rem; letter-spacing: -0.5px;">AUREO <span style="color: var(--primary);">HUB</span></span>
+        </div>
+        
+        <ul class="nav-links">
+            <div class="nav-section">Visão Geral</div>
+            <li class="nav-item"><a href="index.html"><i class="fas fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="sistemas.html"><i class="fas fa-network-wired"></i><span>Sistemas Ativos</span></a></li>
+            <li class="nav-item">
+                <a href="repos.html">
+                    <i class="fab fa-github"></i>
+                    <span>Repositórios GitHub</span>
+                </a>
+            </li>
+            
+            <div class="nav-section">Gestão</div>
+            <li class="nav-item">
+                <a href="add.html">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Adicionar Site</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="metricas.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Métricas de Uptime</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="vault.html">
+                    <i class="fas fa-key"></i>
+                    <span>Cofre de Senhas</span>
+                </a>
+            </li>
+
+            <div class="nav-section">Sistema</div>
+            <li class="nav-item active">
+                <a href="config.html">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações &amp; APIs</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Painel de Controle e Chaves</h1>
+                <p>Gerencie integrações, tokens de segurança e APIs do Hub central.</p>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="filter-btn active" style="text-decoration: none;"><i class="fas fa-arrow-left"></i> Voltar ao Painel</a>
+                <div id="headerUser" style="margin-left: 1rem;"></div>
+            </div>
+        </header>
+
+        <div class="glass-panel form-container">
+            
+            <form id="configForm">
+                <!-- GITHUB API CONFIG -->
+                <div class="config-section">
+                    <div class="config-header">
+                        <i class="fab fa-github" style="color: #fff;"></i> Integração GitHub (Repositórios Privados)
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Permite que o Hub acesse todo o seu código-fonte fechado na nuvem. Gere um <strong>Personal Access Token (Classic)</strong> no Github com a permissão "repo" e cole abaixo.
+                    </p>
+                    
+                    <div class="form-group">
+                        <label>Token de Acesso Pessoal (PAT)</label>
+                        <div class="token-row">
+                            <input type="password" id="inputGithubToken" class="form-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxx">
+                            <button type="button" class="form-btn token-eye-btn" onclick="togglePasswordVisibility('inputGithubToken')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OUTROS SERVICOS FUTUROS -->
+                <div class="config-section" style="opacity: 0.7;">
+                    <div class="config-header">
+                        <i class="fas fa-fire" style="color: #FFCA28;"></i> Firebase Admin SDK (Futuro)
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Espaço reservado para futura injeção do token mestre do Firebase para gestão dos seus bancos de dados no Hub.
+                    </p>
+                    
+                    <div class="form-group">
+                        <label>Firebase Web API Key (Em Breve)</label>
+                        <input type="text" class="form-input" placeholder="Apenas para uso futuro" disabled style="cursor: not-allowed; background: rgba(0,0,0,0.8);">
+                    </div>
+                </div>
+
+                <div class="actions-row">
+                    <button type="button" class="form-btn danger" onclick="clearAllTokens()">
+                        <i class="fas fa-trash-alt"></i> Apagar Tudo
+                    </button>
+                    <button type="submit" class="form-btn">
+                        <i class="fas fa-save"></i> Salvar Configurações Locais
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Load existing token when opening config page
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentGitToken = localStorage.getItem('github_pat');
+            if (currentGitToken) {
+                document.getElementById('inputGithubToken').value = currentGitToken;
+            }
+        });
+
+        // Save logic
+        document.getElementById('configForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const gitToken = document.getElementById('inputGithubToken').value.trim();
+            
+            if (gitToken) {
+                localStorage.setItem('github_pat', gitToken);
+            } else {
+                localStorage.removeItem('github_pat');
+            }
+            
+            alert('✅ Chaves de API salvas com sucesso no seu LocalStorage seguro.');
+        });
+
+        // Clear all logic — usa o modal de 2 etapas
+        window.clearAllTokens = function() {
+            openDangerConfirm({
+                title: 'Apagar Todas as Chaves',
+                message: 'Esta ação removerá todos os tokens e APIs salvos no Aureo Hub neste navegador. Você precisará inserir novamente para acessar repositórios privados.',
+                confirmText: 'APAGAR TUDO',
+                btnLabel: 'Apagar Definitivamente',
+                onConfirm: () => {
+                    localStorage.removeItem('github_pat');
+                    document.getElementById('inputGithubToken').value = '';
+                    alert('🗑️ Todas as chaves foram removidas deste computador.');
+                }
+            });
+        }
+
+        // Toggle password view
+        window.togglePasswordVisibility = function(inputId) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

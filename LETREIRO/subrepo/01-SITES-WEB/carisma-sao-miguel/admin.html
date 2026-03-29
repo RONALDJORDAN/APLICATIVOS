@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Carisma SMC</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--bg-main);
+        }
+
+        .admin-sidebar {
+            width: 250px;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-content {
+            flex: 1;
+            padding: 3rem;
+            overflow-y: auto;
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-lighter));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(242, 95, 34, 0.05), transparent);
+            pointer-events: none;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--primary);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: rgba(242, 95, 34, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: inset 0 0 20px rgba(242, 95, 34, 0.1);
+        }
+
+        .stat-card:hover .stat-icon {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(242, 95, 34, 0.3);
+        }
+
+        .stat-info h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-info p {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(to bottom, #fff, #bbb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Alert/Confirm Modal */
+        #custom-confirm-modal .modal-content {
+            max-width: 400px;
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        .confirm-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .confirm-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .confirm-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .confirm-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-confirm-ok {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            flex: 2;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-confirm-cancel {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border: 1px solid var(--border-color);
+            flex: 1;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-input {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--text-primary);
+            min-width: 250px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .filter-select {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--text-primary);
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 1.2rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: var(--bg-lighter);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .nav-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            flex: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .nav-item.active,
+        .nav-item:hover {
+            background: rgba(242, 95, 34, 0.1);
+            color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .stat-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-layout {
+                flex-direction: column;
+            }
+
+            .admin-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .panel-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .controls {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: var(--bg-main);
+        }
+
+        .auth-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .auth-logo {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .auth-box h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .auth-box p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Modais Extras (Admin) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(242, 95, 34, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Admin Area -->
+    <div id="admin-login-section" class="auth-container">
+        <div class="auth-box">
+            <a href="index.html" class="logo auth-logo">
+                <span class="logo-bold">ADMIN</span>
+                <span class="logo-light">SMC</span>
+            </a>
+            <h2>Acesso Restrito</h2>
+            <p>Faça login como administrador para continuar</p>
+
+            <form id="formAdminLogin" class="signup-form">
+                <div class="form-group">
+                    <label for="admin-email">E-mail Administrativo</label>
+                    <input type="email" id="admin-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-senha">Senha</label>
+                    <input type="password" id="admin-senha" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block mt-4">Entrar <i class="ph ph-sign-in"></i></button>
+            </form>
+            <p class="mt-4" style="font-size: 0.9rem;">
+                <a href="index.html"><i class="ph ph-arrow-left"></i> Voltar para o site</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="admin-layout" id="admin-panel" style="display: none;">
+
+        <aside class="admin-sidebar">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem; display: block; text-align: center;">
+                <span class="logo-bold">ADMIN</span>
+                <span class="logo-light">SMC</span>
+            </a>
+
+            <div class="nav-items">
+                <div class="nav-item active" data-tab="dashboard">
+                    <i class="ph ph-squares-four"></i> Dashboard
+                </div>
+                <div class="nav-item" data-tab="students">
+                    <i class="ph ph-users"></i> Relatório de Alunos
+                </div>
+                <div class="nav-item" data-tab="inscriptions">
+                    <i class="ph ph-user-plus"></i> Inscrições Pendentes
+                </div>
+                <!-- <div class="nav-item" data-tab="attendance">
+                    <i class="ph ph-list-checks"></i> Frequência Global
+                </div> -->
+
+                <div class="nav-item" id="btn-admin-logout" style="margin-top: auto; color: #ff4d4f;">
+                    <i class="ph ph-sign-out"></i> Sair
+                </div>
+            </div>
+        </aside>
+
+        <main class="admin-content">
+
+            <!-- Tab: Dashboard -->
+            <div id="tab-dashboard" class="tab-content active">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Painel Global</h1>
+
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-users-three"></i></div>
+                        <div class="stat-info">
+                            <h4>Total de Alunos</h4>
+                            <p id="stat-total-students">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-fingerprint"></i></div>
+                        <div class="stat-info">
+                            <h4>Total de Presenças Registradas</h4>
+                            <p id="stat-total-attendance">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-calendar-check"></i></div>
+                        <div class="stat-info">
+                            <h4>Presenças Hoje</h4>
+                            <p id="stat-today-attendance">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-header">
+                    <h3 style="font-size: 1.2rem;">Últimas Atividades (Check-ins)</h3>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nome do Aluno</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-activities-table">
+                            <!-- Filled by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: Students -->
+            <div id="tab-students" class="tab-content">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Relatório de <span>Alunos</span>
+                </h1>
+
+                <div class="panel-header">
+                    <h3 style="font-size: 1.2rem;">Lista Restrita</h3>
+                    <div class="controls">
+                        <input type="text" id="search-student" class="search-input"
+                            placeholder="Buscar por nome ou e-mail...">
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome / Cargo</th>
+                                <th>Email</th>
+                                <th>Contato</th>
+                                <th>Total Presenças</th>
+                                <th>Ações (Cargo)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-table">
+                            <!-- Filled by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: Inscriptions -->
+            <div id="tab-inscriptions" class="tab-content">
+                <h1 class="section-title" style="margin-bottom: 2rem; font-size: 2rem;">Inscrições
+                    <span>Pendentes</span>
+                </h1>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome Completo</th>
+                                <th>Data Nasc.</th>
+                                <th>WhatsApp</th>
+                                <th>Data Solicitação</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inscriptions-table">
+                            <!-- Filled by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Modal Edição Aluno -->
+            <div id="edit-student-modal" class="modal-overlay">
+                <div class="modal-content" style="max-width: 500px; text-align: left;">
+                    <div class="modal-header">
+                        <h2>Editar Cadastro</h2>
+                        <button id="close-edit-modal"
+                            style="background:none; border:none; color:var(--text-primary); cursor:pointer;">
+                            <i class="ph ph-x" style="font-size: 1.5rem;"></i>
+                        </button>
+                    </div>
+                    <form id="formEditStudent"
+                        style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
+                        <input type="hidden" id="edit-id">
+
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" id="edit-nome" class="search-input" required>
+                        </div>
+
+                        <div class="form-row" style="display:flex; gap:1rem;">
+                            <div class="form-group" style="flex:1;">
+                                <label>Data de Nascimento</label>
+                                <input type="date" id="edit-data-nasc" class="search-input" required>
+                            </div>
+                            <div class="form-group" style="flex:1;">
+                                <label>WhatsApp</label>
+                                <input type="text" id="edit-whatsapp" class="search-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email / Login de Acesso</label>
+                            <input type="text" id="edit-email" class="search-input" disabled
+                                style="opacity: 0.6; cursor: not-allowed;">
+                            <span style="font-size: 0.75rem; color:var(--text-muted); margin-top:0.2rem;">O Login de
+                                Acesso não
+                                pode ser editado livremente. Para "zerar" a senha/login de um aluno, use o botão
+                                "Resetar
+                                Acesso" abaixo.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Informações Extras Observações (Endereço, Responsável, etc)</label>
+                            <textarea id="edit-extras" class="search-input" rows="3"
+                                style="resize:vertical;"></textarea>
+                        </div>
+
+                        <div class="form-actions" style="display:flex; gap:1rem; margin-top:1rem; flex-wrap: wrap;">
+                            <button type="button" id="btn-reset-auth"
+                                style="background:var(--card-bg); border:1px solid #ff9800; color:#ff9800; padding:0.8rem; border-radius:8px; cursor:pointer; flex: 1; font-weight: 500; font-size:0.9rem;">
+                                <i class="ph ph-arrows-clockwise"></i> Resetar Acesso
+                            </button>
+                            <button type="submit" id="btn-save-edit" class="btn-primary" style="flex: 1;">
+                                Salvar Alterações
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Modal Confirmação Customizado -->
+            <div id="custom-confirm-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <div class="confirm-icon">
+                        <i class="ph ph-warning-circle"></i>
+                    </div>
+                    <h2 class="confirm-title" id="confirm-title">Confirmação</h2>
+                    <p class="confirm-text" id="confirm-text">Deseja prosseguir com esta ação?</p>
+                    <div class="confirm-actions">
+                        <button id="btn-confirm-cancel" class="btn-confirm-cancel">Cancelar</button>
+                        <button id="btn-confirm-ok" class="btn-confirm-ok">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Alerta Customizado -->
+            <div id="custom-alert-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <div class="confirm-icon" id="alert-icon">
+                        <i class="ph ph-check-circle"></i>
+                    </div>
+                    <h2 class="confirm-title" id="alert-title">Sucesso</h2>
+                    <p class="confirm-text" id="alert-text">Ação realizada com êxito.</p>
+                    <div class="confirm-actions">
+                        <button id="btn-alert-ok" class="btn-confirm-ok">Entendido</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+
+</html>

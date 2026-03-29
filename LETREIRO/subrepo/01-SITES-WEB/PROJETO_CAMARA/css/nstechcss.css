@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06/08/2017, 16:06:22
+    Author     : nichael.correia
+*/
+
+html, body { height: 100%;
+             background-color: #e6ffee;
+}    
+
+.center {
+    text-align: center;
+}
+
+.nstechfontGrid {
+    font-size: 10pt;
+}
+
+.nstechfontTituloPanel{
+    font-size: 15pt;
+    color: #0B0B61;
+}
+
+.nstechfontBotaoAdicionar{
+    font-size: 10pt;
+}
+
+.nstechfontGridEndereco {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.nstechfontGridCenter {
+    font-size: 10pt;
+    text-align: center;
+}
+
+.nstechfontTab {
+    font-size: 12pt;
+}
+
+.nstechfontButton {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.nstechTxtTitle {
+    width: 60%;
+    height: 70px;
+    float: left;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: #0B0B61;
+}        
+
+.nstechImgTitle {
+    margin-left: 100%;
+    width: 40%;
+    height: 70px;
+}
+
+.nstechMenu {
+    display: inline;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    float: left;
+}        
+
+.nstechbody {
+    display: inline;
+    min-width: 100%;
+    height: 100%;
+    float: left;
+}     
+
+.fonteMenu{
+    font-size: 20px;
+}
+
+.menu{
+    background-image: linear-gradient(to bottom right, #ccff99, #ccff99);
+    font-size: 20px;
+    color: #fff;
+}
+
+.divcabecalho{
+    top: 0;
+    left: 0;
+    position: fixed;     
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    height: 70px;                
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    background-color: #ccffdd;
+    background-image: linear-gradient(to bottom right, #004d1a, #ccffdd);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24),0 9px 9px 0 rgba(0,0,0,0.19);
+}
+
+.divcabecalhoMobile{
+    top: 0;
+    left: 0;
+    position: fixed;     
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    height: 60px;                
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    background-color: #ccffdd;
+    background-image: linear-gradient(to bottom right, #004d1a, #ccffdd);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24),0 9px 9px 0 rgba(0,0,0,0.19);
+}
